@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7A1AD09C-08DB-4AEB-839A-97E6A1242F33}</ProjectGuid>
+    <ProjectGuid>{250D5DBF-3950-4893-9BF4-D8B4EE75BE4C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BussinesLogicLayer</RootNamespace>
-    <AssemblyName>BussinesLogicLayer</AssemblyName>
+    <RootNamespace>InmobiliariaLogicLayer</RootNamespace>
+    <AssemblyName>InmobiliariaLogicLayer</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,26 +40,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dependencias\IDataLayer.cs" />
     <Compile Include="Descuentos\DescuentoStrategies\DescuentoPerlas.cs" />
     <Compile Include="Descuentos\DescuentoStrategies\DescuentoRefugio.cs" />
     <Compile Include="Descuentos\IStrategyDescuento.cs" />
-    <Compile Include="Dependencias\IDataLayer.cs" />
     <Compile Include="Intereses\InteresStrategies\InteresAmerica.cs" />
     <Compile Include="Intereses\InteresStrategies\InteresCondado.cs" />
     <Compile Include="Intereses\InteresStrategies\InteresPerlas.cs" />
     <Compile Include="Intereses\InteresStrategies\InteresRefugio.cs" />
     <Compile Include="Intereses\IStrategyInteres.cs" />
-    <Compile Include="Lotes\LoteDecorators\CuotasLote.cs" />
-    <Compile Include="Lotes\LoteDecorators\EngancheLote.cs" />
-    <Compile Include="Lotes\LoteDecorators\InteresLote.cs" />
-    <Compile Include="Lotes\LoteDecorators\PromocionLote.cs" />
-    <Compile Include="Lotes\PrecioLote.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Lotes\ILoteComponent.cs" />
     <Compile Include="Lotes\Lote.cs" />
-    <Compile Include="Lotes\LoteDecorators\DescuentoLote.cs" />
-    <Compile Include="Lotes\LoteDecorators\ReservaLote.cs" />
-    <Compile Include="Lotes\LoteDecorators\LoteDecorator.cs" />
+    <Compile Include="Lotes\LoteDecorator\CuotasLote.cs" />
+    <Compile Include="Lotes\LoteDecorator\DescuentoLote.cs" />
+    <Compile Include="Lotes\LoteDecorator\EngancheLote.cs" />
+    <Compile Include="Lotes\LoteDecorator\InteresLote.cs" />
+    <Compile Include="Lotes\LoteDecorator\LoteDecorator.cs" />
+    <Compile Include="Lotes\LoteDecorator\PromocionLote.cs" />
+    <Compile Include="Lotes\LoteDecorator\ReservaLote.cs" />
+    <Compile Include="Lotes\PrecioLote.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InmobiliariaViewModels\InmobiliariaViewModels.csproj">

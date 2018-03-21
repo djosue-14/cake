@@ -50,8 +50,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BussinesLogicLayer\InmobiliariaLogicLayer.csproj">
-      <Project>{7a1ad09c-08db-4aeb-839a-97e6a1242f33}</Project>
+    <ProjectReference Include="..\InmobiliariaLogicLayer\InmobiliariaLogicLayer.csproj">
+      <Project>{250d5dbf-3950-4893-9bf4-d8b4ee75be4c}</Project>
       <Name>InmobiliariaLogicLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\InmobiliariaViewModels\InmobiliariaViewModels.csproj">

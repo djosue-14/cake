@@ -5,13 +5,13 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inmobiliaria", "Inmobiliaria\Inmobiliaria.csproj", "{F813E226-5BA4-45D6-A295-C8FB36A850A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InmobiliariaLogicLayer", "BussinesLogicLayer\InmobiliariaLogicLayer.csproj", "{7A1AD09C-08DB-4AEB-839A-97E6A1242F33}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InmobiliariaDataLayer", "DataAccessLayer\InmobiliariaDataLayer.csproj", "{B563CF15-A43F-4774-9F44-99BBA4A5102D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBussinesLogic", "TestBussinesLogic\TestBussinesLogic.csproj", "{24FC16AB-3501-4109-834C-848C112AAA2D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InmobiliariaViewModels", "InmobiliariaViewModels\InmobiliariaViewModels.csproj", "{58FA08D4-F0D1-461F-A496-7CD488FAF868}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InmobiliariaDataLayer", "InmobiliariaDataLayer\InmobiliariaDataLayer.csproj", "{9CEB814F-91C8-4B5A-8E31-E5CE0A4CD150}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InmobiliariaLogicLayer", "InmobiliariaLogicLayer\InmobiliariaLogicLayer.csproj", "{250D5DBF-3950-4893-9BF4-D8B4EE75BE4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,14 +23,6 @@ Global
 		{F813E226-5BA4-45D6-A295-C8FB36A850A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F813E226-5BA4-45D6-A295-C8FB36A850A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F813E226-5BA4-45D6-A295-C8FB36A850A8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A1AD09C-08DB-4AEB-839A-97E6A1242F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A1AD09C-08DB-4AEB-839A-97E6A1242F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A1AD09C-08DB-4AEB-839A-97E6A1242F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A1AD09C-08DB-4AEB-839A-97E6A1242F33}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B563CF15-A43F-4774-9F44-99BBA4A5102D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B563CF15-A43F-4774-9F44-99BBA4A5102D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B563CF15-A43F-4774-9F44-99BBA4A5102D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B563CF15-A43F-4774-9F44-99BBA4A5102D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{24FC16AB-3501-4109-834C-848C112AAA2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{24FC16AB-3501-4109-834C-848C112AAA2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24FC16AB-3501-4109-834C-848C112AAA2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +31,14 @@ Global
 		{58FA08D4-F0D1-461F-A496-7CD488FAF868}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58FA08D4-F0D1-461F-A496-7CD488FAF868}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58FA08D4-F0D1-461F-A496-7CD488FAF868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CEB814F-91C8-4B5A-8E31-E5CE0A4CD150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CEB814F-91C8-4B5A-8E31-E5CE0A4CD150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CEB814F-91C8-4B5A-8E31-E5CE0A4CD150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CEB814F-91C8-4B5A-8E31-E5CE0A4CD150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{250D5DBF-3950-4893-9BF4-D8B4EE75BE4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{250D5DBF-3950-4893-9BF4-D8B4EE75BE4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{250D5DBF-3950-4893-9BF4-D8B4EE75BE4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{250D5DBF-3950-4893-9BF4-D8B4EE75BE4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
