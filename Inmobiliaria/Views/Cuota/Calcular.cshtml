@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Calcular";
+}
+
+<div class="row">
+    <div class="col-lg-3">
+        <div class="bs-component">
+            @using (Html.BeginForm("DetailMonths", "Cuota", FormMethod.Post))
+            {
+                <fieldset>
+                    <legend>Calcular Cuotas</legend>
+
+                    <div class="form-group">
+
+                        <label class="col-form-label" for="cantidad">Cantidad</label>
+                        <input type="text" name="cantidad" class="form-control" id="cantidad" placeholder="Cantidad">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label" for="tiempo">Tiempo de Financiamiento</label>
+                        <input type="text" name="tiempo" class="form-control" id="tiempo" placeholder="Tiempo de Financiamiento">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label" for="interes">Interes</label>
+                        <select class="form-control" name="interes" id="interes">
+                            <option value="new InteresPerlas">Perlas 13%</option>
+                            <option value="new InteresRefugio">Refugio 12%</option>
+                            <option value="new InteresCondado">Condado 10%</option>
+                            <option value="new InteresAmerica">America 10%</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Calcular</button>
+
+                </fieldset>
+            }
+        </div>
+    </div>
+</div>

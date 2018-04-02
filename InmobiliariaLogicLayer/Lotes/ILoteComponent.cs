@@ -8,7 +8,7 @@ namespace InmobiliariaLogicLayer.Lotes
 {
     public interface ILoteComponent
     {
-        double calcularCostoLote();
-        double calcularSaldoLote();
+        double calcularMonto();
+        double calcularSaldo();
     }
 }

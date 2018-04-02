@@ -15,12 +15,12 @@ namespace InmobiliariaLogicLayer.Lotes
             this.capitalACalcular = capitalACalcular;
         }
 
-        public double calcularCostoLote()
+        public double calcularMonto()
         {
             return capitalACalcular;
         }
 
-        public double calcularSaldoLote()
+        public double calcularSaldo()
         {
             return capitalACalcular;
         }

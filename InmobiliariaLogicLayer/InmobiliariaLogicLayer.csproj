@@ -40,30 +40,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cuotas\CuotasPorFinanciamiento.cs" />
     <Compile Include="Dependencias\IDataLayer.cs" />
-    <Compile Include="Descuentos\DescuentoStrategies\DescuentoPerlas.cs" />
-    <Compile Include="Descuentos\DescuentoStrategies\DescuentoRefugio.cs" />
-    <Compile Include="Descuentos\IStrategyDescuento.cs" />
-    <Compile Include="Intereses\InteresStrategies\InteresAmerica.cs" />
-    <Compile Include="Intereses\InteresStrategies\InteresCondado.cs" />
-    <Compile Include="Intereses\InteresStrategies\InteresPerlas.cs" />
-    <Compile Include="Intereses\InteresStrategies\InteresRefugio.cs" />
-    <Compile Include="Intereses\IStrategyInteres.cs" />
+    <Compile Include="Lotes\Descuentos\DescuentoStrategies\DescuentoPerlas.cs" />
+    <Compile Include="Lotes\Descuentos\DescuentoStrategies\DescuentoRefugio.cs" />
+    <Compile Include="Lotes\Descuentos\IStrategyDescuento.cs" />
+    <Compile Include="Factories\SimpleFactoryInteres.cs" />
+    <Compile Include="Lotes\Intereses\InteresStrategies\InteresAmerica.cs" />
+    <Compile Include="Lotes\Intereses\InteresStrategies\InteresCondado.cs" />
+    <Compile Include="Lotes\Intereses\InteresStrategies\InteresPerlas.cs" />
+    <Compile Include="Lotes\Intereses\InteresStrategies\InteresRefugio.cs" />
+    <Compile Include="Lotes\Intereses\IStrategyInteres.cs" />
     <Compile Include="Lotes\ILoteComponent.cs" />
-    <Compile Include="Lotes\Lote.cs" />
-    <Compile Include="Lotes\LoteDecorator\CuotasLote.cs" />
-    <Compile Include="Lotes\LoteDecorator\DescuentoLote.cs" />
-    <Compile Include="Lotes\LoteDecorator\EngancheLote.cs" />
-    <Compile Include="Lotes\LoteDecorator\InteresLote.cs" />
-    <Compile Include="Lotes\LoteDecorator\LoteDecorator.cs" />
-    <Compile Include="Lotes\LoteDecorator\PromocionLote.cs" />
-    <Compile Include="Lotes\LoteDecorator\ReservaLote.cs" />
+    <Compile Include="Cuotas\CuotasPorMes.cs" />
     <Compile Include="Lotes\PrecioLote.cs" />
+    <Compile Include="Lotes\PrecioLoteDecorators\DescuentoLote.cs" />
+    <Compile Include="Lotes\PrecioLoteDecorators\EngancheLote.cs" />
+    <Compile Include="Lotes\PrecioLoteDecorators\InteresLote.cs" />
+    <Compile Include="Lotes\PrecioLoteDecorators\LoteDecorator.cs" />
+    <Compile Include="Lotes\PrecioLoteDecorators\PromocionLote.cs" />
+    <Compile Include="Lotes\PrecioLoteDecorators\ReservaLote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Decimales\PuntoDecimal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InmobiliariaViewModels\InmobiliariaViewModels.csproj">
-      <Project>{58fa08d4-f0d1-461f-a496-7cd488faf868}</Project>
+      <Project>{a5508aca-f5f8-4f3e-a49a-c532a0a0e51d}</Project>
       <Name>InmobiliariaViewModels</Name>
     </ProjectReference>
   </ItemGroup>

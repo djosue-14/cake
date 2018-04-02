@@ -55,7 +55,7 @@
       <Name>InmobiliariaLogicLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\InmobiliariaViewModels\InmobiliariaViewModels.csproj">
-      <Project>{58fa08d4-f0d1-461f-a496-7cd488faf868}</Project>
+      <Project>{a5508aca-f5f8-4f3e-a49a-c532a0a0e51d}</Project>
       <Name>InmobiliariaViewModels</Name>
     </ProjectReference>
   </ItemGroup>
