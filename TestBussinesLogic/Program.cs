@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using InmobiliariaLogicLayer.Intereses.InteresStrategies;
+using InmobiliariaLogicLayer.Intereses;
 using InmobiliariaLogicLayer.Lotes;
 using InmobiliariaLogicLayer.Lotes.PrecioLoteDecorators;
 using InmobiliariaViewModels.Cuotas;

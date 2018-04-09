@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using InmobiliariaLogicLayer.Descuentos;
 
-namespace InmobiliariaLogicLayer.Descuentos.DescuentoStrategies
+namespace InmobiliariaLogicLayer.Descuentos
 {
     public class DescuentoRefugio: IStrategyDescuento
     {

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using InmobiliariaLogicLayer.Intereses.InteresStrategies;
 using InmobiliariaLogicLayer.Intereses;
 
 namespace InmobiliariaLogicLayer.Factories
@@ -14,19 +13,19 @@ namespace InmobiliariaLogicLayer.Factories
         {
             IStrategyInteres lotificadoraInteres = null;
 
-            if (type == "refugio")
+            if (type == "Refugio")
             {
                 lotificadoraInteres = new InteresRefugio();
             }
-            else if (type == "perlas")
+            else if (type == "Perlas")
             {
                 lotificadoraInteres = new InteresPerlas();
             }
-            else if (type == "america")
+            else if (type == "America")
             {
                 lotificadoraInteres = new InteresAmerica();
             }
-            else if (type == "condado")
+            else if (type == "Condado")
             {
                 lotificadoraInteres = new InteresCondado();
             }

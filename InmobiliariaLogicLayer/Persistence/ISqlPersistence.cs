@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InmobiliariaLogicLayer.Dependencias
+namespace InmobiliariaLogicLayer.Persistence
 {
-    public interface IDataLayer
+    public interface ISqlPersistence
     {
+        bool save();
+        bool update();
     }
 }

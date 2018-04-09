@@ -41,15 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cuotas\CuotasPorFinanciamiento.cs" />
-    <Compile Include="Dependencias\IDataLayer.cs" />
-    <Compile Include="Lotes\Descuentos\DescuentoStrategies\DescuentoPerlas.cs" />
-    <Compile Include="Lotes\Descuentos\DescuentoStrategies\DescuentoRefugio.cs" />
+    <Compile Include="Lotes\Descuentos\DescuentoPerlas.cs" />
+    <Compile Include="Lotes\Descuentos\DescuentoRefugio.cs" />
     <Compile Include="Lotes\Descuentos\IStrategyDescuento.cs" />
     <Compile Include="Factories\SimpleFactoryInteres.cs" />
-    <Compile Include="Lotes\Intereses\InteresStrategies\InteresAmerica.cs" />
-    <Compile Include="Lotes\Intereses\InteresStrategies\InteresCondado.cs" />
-    <Compile Include="Lotes\Intereses\InteresStrategies\InteresPerlas.cs" />
-    <Compile Include="Lotes\Intereses\InteresStrategies\InteresRefugio.cs" />
+    <Compile Include="Lotes\Intereses\InteresAmerica.cs" />
+    <Compile Include="Lotes\Intereses\InteresCondado.cs" />
+    <Compile Include="Lotes\Intereses\InteresPerlas.cs" />
+    <Compile Include="Lotes\Intereses\InteresRefugio.cs" />
     <Compile Include="Lotes\Intereses\IStrategyInteres.cs" />
     <Compile Include="Lotes\ILoteComponent.cs" />
     <Compile Include="Cuotas\CuotasPorMes.cs" />
@@ -60,6 +59,8 @@
     <Compile Include="Lotes\PrecioLoteDecorators\LoteDecorator.cs" />
     <Compile Include="Lotes\PrecioLoteDecorators\PromocionLote.cs" />
     <Compile Include="Lotes\PrecioLoteDecorators\ReservaLote.cs" />
+    <Compile Include="Persistence\IReadPersistence.cs" />
+    <Compile Include="Persistence\ISqlPersistence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Decimales\PuntoDecimal.cs" />
   </ItemGroup>

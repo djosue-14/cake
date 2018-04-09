@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using InmobiliariaViewModels.Cuotas;
 using InmobiliariaLogicLayer.Lotes;
 using InmobiliariaLogicLayer.Lotes.PrecioLoteDecorators;
-using InmobiliariaLogicLayer.Intereses.InteresStrategies;
+using InmobiliariaLogicLayer.Intereses;
 using InmobiliariaLogicLayer.Decimales;
 
 namespace InmobiliariaLogicLayer.Cuotas

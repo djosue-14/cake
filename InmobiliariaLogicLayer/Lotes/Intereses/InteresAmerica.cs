@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InmobiliariaLogicLayer.Intereses.InteresStrategies
+namespace InmobiliariaLogicLayer.Intereses
 {
-    public class InteresCondado: IStrategyInteres
+    public class InteresAmerica: IStrategyInteres
     {
         public double calcularInteres(double precioSinEnganche, int tiempoDeFinanciamiento)
         {
-            double tasaDeInteres = 0.18;
+            double tasaDeInteres = 0.10;
             double monto = precioSinEnganche * (1 + tasaDeInteres * (tiempoDeFinanciamiento / 12));
             return monto;
         }

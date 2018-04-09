@@ -302,6 +302,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\InmobiliariaDataLayer\InmobiliariaDataLayer.csproj">
+      <Project>{9ceb814f-91c8-4b5a-8e31-e5ce0a4cd150}</Project>
+      <Name>InmobiliariaDataLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\InmobiliariaLogicLayer\InmobiliariaLogicLayer.csproj">
       <Project>{250d5dbf-3950-4893-9bf4-d8b4ee75be4c}</Project>
       <Name>InmobiliariaLogicLayer</Name>

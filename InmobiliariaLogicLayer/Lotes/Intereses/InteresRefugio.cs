@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InmobiliariaLogicLayer.Intereses.InteresStrategies
+namespace InmobiliariaLogicLayer.Intereses
 {
     public class InteresRefugio: IStrategyInteres
     {
