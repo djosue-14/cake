@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
-using NpgsqlTypes;
 
 namespace InmobiliariaDataLayer.Connection
 {
@@ -12,7 +11,7 @@ namespace InmobiliariaDataLayer.Connection
     {
         public static NpgsqlConnection Connection()
         {
-            string dbString = "Server=192.168.1.10; Port=5432; Database=testinmobiliaria; User Id=postgres;" +
+            string dbString = "Server=127.0.0.1; Port=5432; Database=TestInmobiliaria; User Id=postgres;" +
                             "Password = ynwa1234; ";
 
             return new NpgsqlConnection(dbString);

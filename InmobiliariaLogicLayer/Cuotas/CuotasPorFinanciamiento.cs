@@ -21,7 +21,7 @@ namespace InmobiliariaLogicLayer.Cuotas
 
         public List<CuotasPorFinanciamientoViewModels> listaPorFinanciamiento(CalcularCuotaViewModels data)
         {
-            List<CuotasPorFinanciamientoViewModels> listaDeCuotas = new List<CuotasPorFinanciamientoViewModels>();
+            var listaDeCuotas = new List<CuotasPorFinanciamientoViewModels>();
 
             ILoteComponent lote = new PrecioLote(data.cantidad);
             lote = new EngancheLote(lote);

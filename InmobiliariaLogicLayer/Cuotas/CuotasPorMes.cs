@@ -25,7 +25,7 @@ namespace InmobiliariaLogicLayer.Cuotas
         public List<CuotasPorMesViewModels> listaPorMes(CalcularCuotaViewModels data)
         {
             setDataToDictionary(data);
-            List<CuotasPorMesViewModels> listaDeCuotas = new List<CuotasPorMesViewModels>();
+            var listaDeCuotas = new List<CuotasPorMesViewModels>();
 
             listaDeCuotas.Add(new CuotasPorMesViewModels()
             {

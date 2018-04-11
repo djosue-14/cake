@@ -50,7 +50,7 @@
   <ItemGroup>
     <Compile Include="Connection\PostConnection.cs" />
     <Compile Include="Financiamiento\Financiamiento.cs" />
-    <Compile Include="InteresRepository\InteresRepository.cs" />
+    <Compile Include="Lote\InteresRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

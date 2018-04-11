@@ -41,6 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cuotas\CuotasPorFinanciamiento.cs" />
+    <Compile Include="Cuotas\Moras\IMora.cs" />
+    <Compile Include="Cuotas\Moras\Mora.cs" />
+    <Compile Include="Cuotas\Moras\MoraCompuesta.cs" />
+    <Compile Include="Cuotas\Moras\MoraSimple.cs" />
     <Compile Include="Lotes\Descuentos\DescuentoPerlas.cs" />
     <Compile Include="Lotes\Descuentos\DescuentoRefugio.cs" />
     <Compile Include="Lotes\Descuentos\IStrategyDescuento.cs" />
