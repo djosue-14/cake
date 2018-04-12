@@ -6,16 +6,7 @@ using System.Threading.Tasks;
 
 namespace InmobiliariaLogicLayer.Persistence
 {
-    public interface IReadPersistence : IFindForItem, IFindAll
-    {
-    }
-
-    public interface IFindForItem
-    {
-        object FindForItem(object id);
-    }
-
-    public interface IFindAll
+    public interface ISelectAll
     {
         object FindAll();
     }

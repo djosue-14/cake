@@ -22,16 +22,17 @@ namespace InmobiliariaDataLayer.Connection
             return new NpgsqlCommand(query);
         }
 
-        public void Command(NpgsqlCommand command)
+        public int Command(NpgsqlCommand command)
         {
+            int estado = -1;
             using (var connection = Connection())
             {
                 try
                 {
                     connection.Open();
                     command.Connection = connection;
-                    command.ExecuteNonQuery();
-                    Console.WriteLine("Sentencia Sql Ejecutada Con Exito");
+                    estado = command.ExecuteNonQuery();
+                    //Console.WriteLine("Sentencia Sql Ejecutada Con Exito");
                 }
                 catch (NpgsqlException ex)
                 {
@@ -42,6 +43,7 @@ namespace InmobiliariaDataLayer.Connection
                     Console.WriteLine(ex.Message);
                 }
             }
+            return estado;
         }
     }
 }

@@ -17,7 +17,7 @@ namespace InmobiliariaDataLayer.Lote
             db = new PostConnection();
         }
         
-        public object FindForItem(object id)
+        public object FindForId(object id)
         {
             object interes = null;//hacer cast a double.
             string query = "SELECT interes FROM lotificadora WHERE nombre = @text";

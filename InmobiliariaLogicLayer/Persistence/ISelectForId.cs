@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace InmobiliariaLogicLayer.Persistence
 {
-    public interface ISqlPersistence: ISelectAll, ISelectForId, ISave, IUpdate, IDelete
+    public interface ISelectForId
     {
+        object FindForId(int id);
     }
 }
