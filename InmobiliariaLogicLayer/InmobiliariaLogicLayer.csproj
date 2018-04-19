@@ -63,8 +63,13 @@
     <Compile Include="Lotes\PrecioLoteDecorators\LoteDecorator.cs" />
     <Compile Include="Lotes\PrecioLoteDecorators\PromocionLote.cs" />
     <Compile Include="Lotes\PrecioLoteDecorators\ReservaLote.cs" />
-    <Compile Include="Persistence\IReadPersistence.cs" />
+    <Compile Include="Pagos\EstadoPagos.cs" />
+    <Compile Include="Persistence\IDelete.cs" />
+    <Compile Include="Persistence\ISave.cs" />
+    <Compile Include="Persistence\ISelectAll.cs" />
+    <Compile Include="Persistence\ISelectForId.cs" />
     <Compile Include="Persistence\ISqlPersistence.cs" />
+    <Compile Include="Persistence\IUpdate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Decimales\PuntoDecimal.cs" />
   </ItemGroup>

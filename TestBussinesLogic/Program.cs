@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using InmobiliariaLogicLayer.Intereses;
-using InmobiliariaLogicLayer.Lotes;
-using InmobiliariaLogicLayer.Lotes.PrecioLoteDecorators;
 using InmobiliariaViewModels.Cuotas;
-using InmobiliariaViewModels;
-using InmobiliariaDataLayer.Lote;
+using InmobiliariaDataLayer.Pagos;
+using InmobiliariaViewModels.EstadoCuenta;
 
 namespace TestBussinesLogic
 {
@@ -14,13 +11,41 @@ namespace TestBussinesLogic
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Inmobiliaria!");
-            InteresRepository interes = new InteresRepository();
-            var list = (List<TestInteresViewModels>)interes.FindAll();
-            foreach (var item in list)
+
+            DBMoras moras = new DBMoras();
+            var listMoras = (List<MoraSelectViewModels>)moras.FindForId(1);
+
+            DBPagos pagos = new DBPagos();
+            var listPagos = (List<PagosSelectViewModels>)pagos.FindForId(1);
+
+            //foreach (var pago in listPagos)
+            //{
+            //    Console.WriteLine(pago.saldo_anterior+" --- "+pago.saldo_actual);
+            //}
+            
+            foreach (var pago in listPagos)
             {
-                Console.WriteLine("Lotificadora: "+item.nombre);
-                Console.WriteLine("Interes: "+item.interes);
+                Console.Write("\n | " + pago.saldo_anterior + " | " + pago.saldo_actual
+                    + " | " + pago.monto + " | " + pago.fecha_pagar.ToString("dd/MM/yyyy") 
+                    + " | " + pago.fecha_cancelada.ToString("dd/MM/yyyy"));
+
+                foreach (var mora in listMoras)
+                {
+                    if (mora.fecha == pago.fecha_pagar)
+                    {
+                        Console.WriteLine(" | " + mora.monto);
+                        listMoras.Remove(mora);
+                        break;
+                    }
+                }
             }
+
+            foreach (var mora in listMoras)
+            {
+                Console.WriteLine("                                 | "+mora.monto);
+            }
+            //Console.WriteLine("Sali");
+
             Console.ReadKey();
         }
     }

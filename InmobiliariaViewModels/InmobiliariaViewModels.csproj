@@ -43,6 +43,11 @@
   <ItemGroup>
     <Compile Include="Cuotas\CalcularCuotaViewModels.cs" />
     <Compile Include="Cuotas\CuotasViewModels.cs" />
+    <Compile Include="Cuotas\CalcularMoraViewModels.cs" />
+    <Compile Include="Cuotas\MoraSaveViewModels.cs" />
+    <Compile Include="Cuotas\MoraSelectViewModels.cs" />
+    <Compile Include="EstadoCuenta\PagosSelectViewModels.cs" />
+    <Compile Include="Pagos\EstadoPagosViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestInteresViewModels.cs" />
   </ItemGroup>

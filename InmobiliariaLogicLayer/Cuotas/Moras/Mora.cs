@@ -3,12 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InmobiliariaViewModels.Cuotas;
+using InmobiliariaLogicLayer.Persistence;
 
 namespace InmobiliariaLogicLayer.Cuotas.Moras
 {
     public abstract class Mora
     {
-        public abstract double MontoMora(double cuota, double tasa, int diasTranscurridos);
+        private ISelectForId selectForId;
+        private ISave save;
+
+        public Mora(ISelectForId selectForId, ISave save)
+        {
+            this.selectForId = selectForId;
+            this.save = save;
+        }
+
+        public abstract double MontoMora(CalcularMoraViewModels datos);
+
+        public CalcularMoraViewModels FindForId(int id)
+        {
+            var datos = (CalcularMoraViewModels)selectForId.FindForId(id);
+            return datos;
+        }
+
         
         public int DiasTranscurridos(DateTime fechaUltimoPago)
         {
@@ -24,6 +42,17 @@ namespace InmobiliariaLogicLayer.Cuotas.Moras
             return diasTranscurridos;
         }
 
-        
+        //public ISelectForId SelectForId
+        //{
+        //    get { return selectForId; }
+        //    set { selectForId = value; }
+        //}
+        //public ISave Save
+        //{
+        //    get { return save; }
+        //    set { save = value; }
+        //}
+
+
     }
 }

@@ -51,6 +51,9 @@
     <Compile Include="Connection\PostConnection.cs" />
     <Compile Include="Financiamiento\Financiamiento.cs" />
     <Compile Include="Lote\InteresRepository.cs" />
+    <Compile Include="Pagos\DBMora.cs" />
+    <Compile Include="Pagos\DBMoras.cs" />
+    <Compile Include="Pagos\DBPagos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

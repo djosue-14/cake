@@ -8,7 +8,7 @@ using InmobiliariaLogicLayer.Persistence;
 
 namespace InmobiliariaDataLayer.Cuenta
 {
-    public class Financiamiento: ISqlPersistence
+    public class Financiamiento//: ISqlPersistence
     {
         private PostConnection db;
 

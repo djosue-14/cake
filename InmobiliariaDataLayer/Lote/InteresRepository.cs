@@ -9,7 +9,7 @@ using InmobiliariaViewModels;
 
 namespace InmobiliariaDataLayer.Lote
 {
-    public class InteresRepository: IReadPersistence
+    public class InteresRepository//: IReadPersistence
     {
         private PostConnection db;
         public InteresRepository()
