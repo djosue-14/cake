@@ -62,10 +62,11 @@ namespace InmobiliariaLogicLayer.Cuotas
             cantidad.Add("TiempoDeFinanciamiento", data.tiempo);
 
             ILoteComponent lote = new PrecioLote(data.cantidad);
-            lote = new EngancheLote(lote);
+            lote = new EngancheLote(lote, data.enganche);
             cantidad.Add("SaldoSinInteres", lote.calcularSaldo());
 
-            lote = new InteresLote(lote, new InteresPerlas(), (int)cantidad["TiempoDeFinanciamiento"]);
+            //lote = new InteresLote(lote, new InteresPerlas(), (int)cantidad["TiempoDeFinanciamiento"]);
+            lote = new InteresLote(lote, data.interes, data.tiempo);
             cantidad.Add("InteresTotal", lote.calcularMonto());
             cantidad.Add("SaldoConInteres", lote.calcularSaldo());
 

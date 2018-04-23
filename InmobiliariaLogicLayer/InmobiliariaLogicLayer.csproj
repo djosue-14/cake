@@ -49,6 +49,7 @@
     <Compile Include="Lotes\Descuentos\DescuentoRefugio.cs" />
     <Compile Include="Lotes\Descuentos\IStrategyDescuento.cs" />
     <Compile Include="Factories\SimpleFactoryInteres.cs" />
+    <Compile Include="Lotes\Intereses\Interes.cs" />
     <Compile Include="Lotes\Intereses\InteresAmerica.cs" />
     <Compile Include="Lotes\Intereses\InteresCondado.cs" />
     <Compile Include="Lotes\Intereses\InteresPerlas.cs" />

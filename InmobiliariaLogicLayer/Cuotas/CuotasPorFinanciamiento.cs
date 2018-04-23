@@ -24,14 +24,15 @@ namespace InmobiliariaLogicLayer.Cuotas
             var listaDeCuotas = new List<CuotasPorFinanciamientoViewModels>();
 
             ILoteComponent lote = new PrecioLote(data.cantidad);
-            lote = new EngancheLote(lote);
-            ILoteComponent loteInteres = new EngancheLote(lote);
-            double enganche = punto.dosDecimales(lote.calcularMonto());
+            lote = new EngancheLote(lote, data.enganche);
+            ILoteComponent loteInteres = new EngancheLote(lote, data.enganche);
+            double enganche = punto.dosDecimales(data.enganche);
             double precioNeto = punto.dosDecimales(lote.calcularSaldo());
 
             while (data.tiempo <= 120)
             {
-                loteInteres = new InteresLote(lote, new InteresPerlas(), data.tiempo);
+                //loteInteres = new InteresLote(lote, new InteresPerlas(), data.tiempo);
+                loteInteres = new InteresLote(lote, data.interes, data.tiempo);
                 listaDeCuotas.Add(
                     new CuotasPorFinanciamientoViewModels()
                     {

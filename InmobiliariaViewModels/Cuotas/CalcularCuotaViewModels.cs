@@ -9,8 +9,9 @@ namespace InmobiliariaViewModels.Cuotas
     public class CalcularCuotaViewModels
     {
         public double cantidad { get; set; }
-        public string interes { get; set; }
+        public double interes { get; set; }
         public int tiempo { get; set; }
+        public double enganche { get; set; }
     }
 
     public class CuotaSelectViewModels

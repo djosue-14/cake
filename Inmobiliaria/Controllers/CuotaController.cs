@@ -21,6 +21,7 @@ namespace Inmobiliaria.Controllers
         {
             ViewBag.Message = "Tabla Financiamiento";
             CuotasPorFinanciamiento calcular = new CuotasPorFinanciamiento();
+            data.tiempo = 12;
             var model = calcular.listaPorFinanciamiento(data);
             return View(model);
         }

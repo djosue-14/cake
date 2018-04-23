@@ -18,17 +18,33 @@
                     </div>
 
                     <div class="form-group">
+                        <label class="col-form-label" for="enganche">Enganche</label>
+                        <input type="text" name="enganche" class="form-control" id="enganche" placeholder="Enganche">
+                    </div>
+
+                    <div class="form-group">
                         <label class="col-form-label" for="tiempo">Tiempo de Financiamiento</label>
-                        <input type="text" name="tiempo" class="form-control" id="tiempo" placeholder="Tiempo de Financiamiento">
+                        <select class="form-control" name="tiempo" id="tiempo">
+                            <option value="12">1 Años/12 Meses</option>
+                            <option value="24">2 Años/24 Meses</option>
+                            <option value="36">3 Años/36 Meses</option>
+                            <option value="48">4 Años/48 Meses</option>
+                            <option value="60">5 Años/60 Meses</option>
+                            <option value="72">6 Años/72 Meses</option>
+                            <option value="84">7 Años/84 Meses</option>
+                            <option value="96">8 Años/96 Meses</option>
+                            <option value="108">9 Años/108 Meses</option>
+                            <option value="120">10 Años/120 Meses</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
                         <label class="col-form-label" for="interes">Interes</label>
                         <select class="form-control" name="interes" id="interes">
-                            <option value="new InteresPerlas">Perlas 13%</option>
-                            <option value="new InteresRefugio">Refugio 12%</option>
-                            <option value="new InteresCondado">Condado 10%</option>
-                            <option value="new InteresAmerica">America 10%</option>
+                            <option value="0.13">Perlas 13%</option>
+                            <option value="0.12">Refugio 12%</option>
+                            <option value="0.18">Condado 18%</option>
+                            <option value="0.10">America 10%</option>
                         </select>
                     </div>
 

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InmobiliariaLogicLayer", "I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InmobiliariaViewModels", "InmobiliariaViewModels\InmobiliariaViewModels.csproj", "{A5508ACA-F5F8-4F3E-A49A-C532A0A0E51D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet.Identity.PostgreSQL", "AspNet.Identity.PostgreSQL\src\AspNet.Identity.PostgreSQL.csproj", "{21018D34-2B0B-4EE1-BD1D-6CC6EC02CECF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A5508ACA-F5F8-4F3E-A49A-C532A0A0E51D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5508ACA-F5F8-4F3E-A49A-C532A0A0E51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5508ACA-F5F8-4F3E-A49A-C532A0A0E51D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21018D34-2B0B-4EE1-BD1D-6CC6EC02CECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21018D34-2B0B-4EE1-BD1D-6CC6EC02CECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21018D34-2B0B-4EE1-BD1D-6CC6EC02CECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21018D34-2B0B-4EE1-BD1D-6CC6EC02CECF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

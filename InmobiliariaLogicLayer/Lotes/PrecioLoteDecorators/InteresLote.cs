@@ -10,20 +10,34 @@ namespace InmobiliariaLogicLayer.Lotes.PrecioLoteDecorators
     public class InteresLote : LoteDecorator
     {
         private ILoteComponent lote;
-        private IStrategyInteres lotificadoraInteres;
+        //private IStrategyInteres lotificadoraInteres;
         private int tiempoDeFinanciamiento;
+        private double tasaInteres;
 
-        public InteresLote(ILoteComponent lote, IStrategyInteres lotificadoraInteres, int tiempoDeFinanciamiento)
+        //public InteresLote(ILoteComponent lote, IStrategyInteres lotificadoraInteres, int tiempoDeFinanciamiento)
+        //{
+        //    this.lote = lote;
+        //    this.lotificadoraInteres = lotificadoraInteres;
+        //    this.tiempoDeFinanciamiento = tiempoDeFinanciamiento;
+        //}
+        public InteresLote(ILoteComponent lote, double tasaInteres, int tiempoDeFinanciamiento)
         {
             this.lote = lote;
-            this.lotificadoraInteres = lotificadoraInteres;
+            this.tasaInteres = tasaInteres;
             this.tiempoDeFinanciamiento = tiempoDeFinanciamiento;
         }
+
+        //public override double calcularMonto()
+        //{
+        //    double precioSinEnganche = lote.calcularSaldo();
+        //    return lotificadoraInteres.calcularInteres(precioSinEnganche, tiempoDeFinanciamiento) - precioSinEnganche;
+        //}
 
         public override double calcularMonto()
         {
             double precioSinEnganche = lote.calcularSaldo();
-            return lotificadoraInteres.calcularInteres(precioSinEnganche, tiempoDeFinanciamiento) - precioSinEnganche;
+            var interes = new Interes(precioSinEnganche, tasaInteres, tiempoDeFinanciamiento);
+            return interes.CalcularInteres() - precioSinEnganche;
         }
 
         public override double calcularSaldo()

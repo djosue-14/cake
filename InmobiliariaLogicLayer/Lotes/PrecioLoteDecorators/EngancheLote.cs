@@ -9,15 +9,18 @@ namespace InmobiliariaLogicLayer.Lotes.PrecioLoteDecorators
     public class EngancheLote: LoteDecorator
     {
         private ILoteComponent lote;
+        private double cantidadEnganche;
 
-        public EngancheLote(ILoteComponent lote)
+        public EngancheLote(ILoteComponent lote, double cantidadEnganche)
         {
             this.lote = lote;
+            this.cantidadEnganche = cantidadEnganche;
         }
 
         public override double calcularMonto()
         {
-            return lote.calcularMonto() * 0.10;
+            //return lote.calcularMonto() * 0.10; //- cantidadEnganche;
+            return cantidadEnganche;
         }
 
         public override double calcularSaldo()
