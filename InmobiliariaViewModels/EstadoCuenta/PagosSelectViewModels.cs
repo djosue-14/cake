@@ -8,10 +8,10 @@ namespace InmobiliariaViewModels.EstadoCuenta
 {
     public class PagosSelectViewModels
     {
-        public double saldo_anterior { get; set; }
-        public double saldo_actual { get; set; }
-        public double monto { get; set; }
-        public DateTime fecha_pagar { get; set; }
-        public DateTime fecha_cancelada { get; set; }
+        public double SaldoAnterior { get; set; }
+        public double SaldoActual { get; set; }
+        public double Monto { get; set; }
+        public DateTime FechaPagar { get; set; }
+        public DateTime FechaCancelada { get; set; }
     }
 }

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using InmobiliariaViewModels.Cuotas;
-using InmobiliariaDataLayer.Pagos;
-using InmobiliariaViewModels.EstadoCuenta;
+using InmobiliariaLogicLayer.Lotes;
+using InmobiliariaLogicLayer.Lotes.PrecioLoteDecorators;
 
 namespace TestBussinesLogic
 {
@@ -10,41 +9,23 @@ namespace TestBussinesLogic
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Inmobiliaria!");
+            //var result = new Dictionary<string, double>();
+            //ILoteComponent lote = new PrecioLote(65000);
+            //result.Add("Precio", lote.calcularMonto());
+            //lote = new EngancheLote(lote, 6500);
+            //result.Add("Enganche", lote.calcularMonto());
+            //lote = new InteresLote(lote, 0.13, 12);
+            //result.Add("Interes", lote.calcularMonto());
+            //result.Add("Precio+Interes", lote.calcularSaldo());
+            ////lote = new DescuentoLote(lote, 0, 0.08);
+            //lote = new DescuentoLote(lote, 1000, 0);
+            //result.Add("Descuento", lote.calcularMonto());
+            //result.Add("Precio-Descuento", lote.calcularSaldo());
 
-            DBMoras moras = new DBMoras();
-            var listMoras = (List<MoraSelectViewModels>)moras.FindForId(1);
+            //Console.WriteLine(" | " + result["Precio"] + " | " + result["Enganche"] +" | "+result["Interes"]+" | "
+            //    +result["Precio+Interes"] + " | "+result["Descuento"]+" | "+result["Precio-Descuento"]);
 
-            DBPagos pagos = new DBPagos();
-            var listPagos = (List<PagosSelectViewModels>)pagos.FindForId(1);
 
-            //foreach (var pago in listPagos)
-            //{
-            //    Console.WriteLine(pago.saldo_anterior+" --- "+pago.saldo_actual);
-            //}
-            
-            foreach (var pago in listPagos)
-            {
-                Console.Write("\n | " + pago.saldo_anterior + " | " + pago.saldo_actual
-                    + " | " + pago.monto + " | " + pago.fecha_pagar.ToString("dd/MM/yyyy") 
-                    + " | " + pago.fecha_cancelada.ToString("dd/MM/yyyy"));
-
-                foreach (var mora in listMoras)
-                {
-                    if (mora.fecha == pago.fecha_pagar)
-                    {
-                        Console.WriteLine(" | " + mora.monto);
-                        listMoras.Remove(mora);
-                        break;
-                    }
-                }
-            }
-
-            foreach (var mora in listMoras)
-            {
-                Console.WriteLine("                                 | "+mora.monto);
-            }
-            //Console.WriteLine("Sali");
 
             Console.ReadKey();
         }

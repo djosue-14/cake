@@ -8,12 +8,12 @@ namespace InmobiliariaViewModels.Pagos
 {
     public class EstadoPagosViewModels
     {
-        public double saldo_anterior { get; set; }
-        public double saldo_actual { get; set; }
-        public double monto_pago { get; set; }
-        public DateTime fecha_pagar { get; set; }
-        public DateTime fecha_cancelada { get; set; }
-        public double monto_mora { get; set; }
-        public int estado { get; set; }
+        public double SaldoAnterior { get; set; }
+        public double SaldoActual { get; set; }
+        public double MontoPago { get; set; }
+        public DateTime FechaPagar { get; set; }
+        public DateTime FechaCancelada { get; set; }
+        public double MontoMora { get; set; }
+        public int Estado { get; set; }
     }
 }

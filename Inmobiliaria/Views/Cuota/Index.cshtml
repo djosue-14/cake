@@ -2,43 +2,47 @@
     ViewBag.Title = "Calcular Cuotas";
 }
 
+<h4>Cuota Por Mes</h4>
 <div class="row">
-    <div class="col-lg-3">
-        <div class="bs-component">
-@using (Html.BeginForm("Details", "Cuota", FormMethod.Post))
-{
-    <fieldset>
-        <legend>Calcular Cuotas</legend>
-
-        <div class="form-group">
-            <label class="col-form-label" for="cantidad">Cantidad</label>
-            <input type="text" name="cantidad" class="form-control" id="cantidad" placeholder="Cantidad">
-        </div>
-
-        <div class="form-group">
-            <label class="col-form-label" for="enganche">Enganche</label>
-            <input type="text" name="enganche" class="form-control" id="enganche" placeholder="Cantidad">
-        </div>
-
-        <div class="form-group">
-            <label class="col-form-label" for="interes">Interes</label>
-            <select class="form-control" name="interes" id="interes">
-                <option value="0.13">Perlas 13%</option>
-                <option value="0.12">Refugio 12%</option>
-                <option value="0.18">Condado 18%</option>
-                <option value="0.10">America 10%</option>
-            </select>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Calcular</button>
-
-    </fieldset>
-}
-        </div>
+    <div class="col s12 m5 l4">
+    
+        @using (Html.BeginForm("Details", "Cuota", FormMethod.Post))
+        {
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" name="cantidad" class="validate" id="cantidad">
+                    <label for="cantidad">Cantidad</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" name="enganche" class="validate" id="enganche">
+                    <label for="enganche">Enganche</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select name="interes" id="interes">
+                        <option value="" disabled selected>Elige tu opcion</option>
+                        <option value="0.13">Perlas 13%</option>
+                        <option value="0.12">Refugio 12%</option>
+                        <option value="0.18">Condado 18%</option>
+                        <option value="0.10">America 10%</option>
+                    </select>
+                    <label for="interes">Interes</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <button type="submit" class="btn light-blue accent-3">Calcular</button>
+                </div>
+            </div>
+        }
     </div>
 </div>
 
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/js/materialscript.js")
 }

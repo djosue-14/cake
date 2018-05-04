@@ -25,7 +25,7 @@ namespace InmobiliariaLogicLayer.Cuotas.Moras
             return ultimaCuotaCancelada;
         }
 
-        private int Save(MoraSaveViewModels moras)
+        private int Save(MoraViewModels moras)
         {
             return save.Save(moras);
         }
@@ -33,11 +33,11 @@ namespace InmobiliariaLogicLayer.Cuotas.Moras
         public int CalcularMora(CalcularMoraViewModels datos)
         {
             int estado = -1;
-            var ultimaFecha = datos.fecha;
+            var ultimaFecha = datos.Fecha;
             var fechaMora = ultimaFecha.AddDays(11);//10 dias de gracia, a partir del 11 se cobra mora.
             var fechaActual = DateTime.Today;
 
-            var mora = new MoraSaveViewModels();
+            var mora = new MoraViewModels();
 
             while (fechaMora <= fechaActual)
             {
@@ -51,8 +51,8 @@ namespace InmobiliariaLogicLayer.Cuotas.Moras
                     break;
                 }
 
-                mora.fecha = fechaMora.AddDays(-11);
-                mora.monto = ((datos.cuota * datos.tasaMora) / 30) * diasDelMes;
+                mora.Fecha = fechaMora.AddDays(-11);
+                mora.Monto = ((datos.Cuota * datos.TasaMora) / 30) * diasDelMes;
                 estado = Save(mora);
             }
 

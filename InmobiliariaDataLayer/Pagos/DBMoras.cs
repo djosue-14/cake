@@ -20,7 +20,7 @@ namespace InmobiliariaDataLayer.Pagos
 
         public object FindForId(int id)
         {
-            var listaMoras = new List<MoraSelectViewModels>();
+            var listaMoras = new List<MoraViewModels>();
             string query = "SELECT monto, fecha, estado FROM moras WHERE venta_id = @id";
 
             using (var connection = PostConnection.Connection())
@@ -36,10 +36,10 @@ namespace InmobiliariaDataLayer.Pagos
                         {
                             while (reader.Read())
                             {
-                                listaMoras.Add(new MoraSelectViewModels() {
-                                    monto = Convert.ToDouble(reader["monto"]),
-                                    fecha = Convert.ToDateTime(reader["fecha"]),
-                                    estado = Convert.ToInt16(reader["estado"])
+                                listaMoras.Add(new MoraViewModels() {
+                                    Monto = Convert.ToDouble(reader["monto"]),
+                                    Fecha = Convert.ToDateTime(reader["fecha"]),
+                                    Estado = Convert.ToInt16(reader["estado"])
                                 });
                             }
                         }

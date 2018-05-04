@@ -10,17 +10,31 @@ namespace InmobiliariaLogicLayer.Lotes.PrecioLoteDecorators
     public class DescuentoLote: LoteDecorator
     {
         private ILoteComponent lote;
-        private IStrategyDescuento lotificadoraDescuento;
+        private double cantidadDescuento;
+        private double porcentajeDescuento;
 
-        public DescuentoLote(ILoteComponent lote, IStrategyDescuento lotificadoraDescuento)
+        public DescuentoLote(ILoteComponent lote, double cantidadDescuento, double porcentajeDescuento)
         {
             this.lote = lote;
-            this.lotificadoraDescuento = lotificadoraDescuento;
+            this.cantidadDescuento = cantidadDescuento;
+            this.porcentajeDescuento = porcentajeDescuento;
         }
+
         public override double calcularMonto()
         {
+            double montoDescuento = 0;
             double saldoLote = lote.calcularSaldo();
-            return lotificadoraDescuento.calcularDescuento(saldoLote);
+
+            if (cantidadDescuento != 0 && porcentajeDescuento == 0)
+            {
+                montoDescuento = cantidadDescuento;
+            }
+            if(porcentajeDescuento != 0 && cantidadDescuento == 0)
+            {
+                montoDescuento = saldoLote * porcentajeDescuento;
+            }
+
+            return montoDescuento;;
         }
 
         public override double calcularSaldo()

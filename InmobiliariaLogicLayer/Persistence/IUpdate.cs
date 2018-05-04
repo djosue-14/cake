@@ -8,6 +8,6 @@ namespace InmobiliariaLogicLayer.Persistence
 {
     public interface IUpdate
     {
-        int Update();
+        int Update(object data);
     }
 }

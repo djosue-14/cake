@@ -21,7 +21,7 @@ namespace InmobiliariaLogicLayer.Cuotas.Moras
         }
         public override double MontoMora(CalcularMoraViewModels datos)
         {
-            double mora = ((datos.cuota * datos.tasaMora) / 30); //* datos.dias;
+            double mora = ((datos.Cuota * datos.TasaMora) / 30); //* datos.dias;
             return mora;
         }
     }

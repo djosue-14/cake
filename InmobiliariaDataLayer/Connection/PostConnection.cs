@@ -11,8 +11,11 @@ namespace InmobiliariaDataLayer.Connection
     {
         public static NpgsqlConnection Connection()
         {
-            string dbString = "Server=127.0.0.1; Port=5432; Database=TestInmobiliaria; User Id=postgres;" +
-                            "Password = ynwa1234; ";
+            //string dbString = "Server=127.0.0.1; Port=5432; Database=TestInmobiliaria; User Id=postgres;" +
+            //              "Password = ynwa1234; ";
+
+            string dbString = "Server=127.0.0.1; Port=5432; Database=prueba; User Id=postgres;" +
+                          "Password = reynoso; ";
 
             return new NpgsqlConnection(dbString);
         }

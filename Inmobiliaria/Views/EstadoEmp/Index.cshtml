@@ -1,0 +1,36 @@
+﻿@model List<InmobiliariaViewModels.Empleados.EstadoEmpViewModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col s12 m12 l12">
+
+        <div class="page-header">
+            <h4 id="tables" class="text-center">Tabla Estado de Empleados</h4>
+        </div>
+
+        <table class="striped responsive-table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre Estado</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td scope="col">@item.nestado</td>
+                        <td>
+                            <a href="@Url.Action("Delete", "EstadoEmp")/@item.id" class="btn-small light-blue">Eliminar</a>
+                            <a href="@Url.Action("Edit", "EstadoEmp")/@item.id" class="btn-small orange">Modificar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>

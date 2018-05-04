@@ -1,0 +1,50 @@
+﻿@model List<InmobiliariaViewModels.Empleados.EmpleadosIngresoViewModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col s12 m12 l12">
+
+        <div class="page-header">
+            <h4 id="tables" class="text-center">Tabla Empleados</h4>
+        </div>
+
+        <table class="striped responsive-table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Dpi</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Fecha Nac</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td scope="col">@item.nombre_e</td>
+                        <td scope="col">@item.apellido_e</td>
+                        <td scope="col">@item.dpi_e</td>
+                        <td scope="col">@item.dire_e</td>
+                        <td scope="col">@item.tel_e</td>
+                        <td scope="col">@item.sexo_e</td>
+                        <td scope="col">@item.fecha_nac_e</td>
+
+                        <td>
+                            <a href="@Url.Action("Delete", "Empleado")/@item.id" class="btn-small light-blue">Eliminar</a>
+                            <a href="@Url.Action("Edit", "Empleado")/@item.id" class="btn-small orange">Modificar</a>
+                            <a href="@Url.Action("RefForEmp", "ReferenciaEmp")/@item.id" class="btn-small btn-primary">Ver Referencia</a>
+                            <a href="@Url.Action("EnviarId", "ReferenciaEmp")/@item.id" class="btn-small green">Agregar Referencia</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>            
+        </table>
+    </div>
+</div>

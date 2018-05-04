@@ -26,24 +26,24 @@ namespace InmobiliariaLogicLayer.Pagos
             var listPagos = new List<EstadoPagosViewModels>();
             var estados = new EstadoPagosViewModels();
 
-            var moras = (List<MoraSelectViewModels>)dbMora.FindForId(id);
+            var moras = (List<MoraViewModels>)dbMora.FindForId(id);
             var pagos = (List<PagosSelectViewModels>)dbPago.FindForId(id);
 
             foreach (var pago in pagos)
             {
                 var estadoPagos = new EstadoPagosViewModels();
-                estadoPagos.saldo_anterior = pago.saldo_anterior;
-                estadoPagos.saldo_actual = pago.saldo_actual;
-                estadoPagos.monto_pago = pago.monto;
-                estadoPagos.fecha_pagar = pago.fecha_pagar;
-                estadoPagos.fecha_cancelada = pago.fecha_cancelada;
+                estadoPagos.SaldoAnterior = pago.SaldoAnterior;
+                estadoPagos.SaldoActual = pago.SaldoActual;
+                estadoPagos.MontoPago = pago.Monto;
+                estadoPagos.FechaPagar = pago.FechaPagar;
+                estadoPagos.FechaCancelada = pago.FechaCancelada;
 
                 foreach (var mora in moras)
                 {
-                    if (mora.fecha == pago.fecha_pagar)
+                    if (mora.Fecha == pago.FechaPagar)
                     {
-                        estadoPagos.monto_mora = mora.monto;
-                        estadoPagos.estado = mora.estado;
+                        estadoPagos.MontoMora = mora.Monto;
+                        estadoPagos.Estado = mora.Estado;
                         moras.Remove(mora);
                         break;
                     }
@@ -56,12 +56,12 @@ namespace InmobiliariaLogicLayer.Pagos
             {
                 listPagos.Add(new EstadoPagosViewModels()
                 {
-                    saldo_anterior = estados.saldo_anterior,
-                    saldo_actual = estados.saldo_actual,
-                    monto_pago = 0,
-                    fecha_pagar = mora.fecha,
-                    monto_mora = mora.monto,
-                    estado = mora.estado
+                    SaldoAnterior = estados.SaldoAnterior,
+                    SaldoActual = estados.SaldoActual,
+                    MontoPago = 0,
+                    FechaPagar = mora.Fecha,
+                    MontoMora = mora.Monto,
+                    Estado = mora.Estado
                 });
             }
 

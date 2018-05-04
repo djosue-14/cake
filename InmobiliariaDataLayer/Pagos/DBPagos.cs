@@ -39,11 +39,11 @@ namespace InmobiliariaDataLayer.Pagos
                             {
                                 listaMoras.Add(new PagosSelectViewModels()
                                 {
-                                    saldo_anterior = Convert.ToDouble(reader["saldo_anterior"]),
-                                    saldo_actual = Convert.ToDouble(reader["saldo_actual"]),
-                                    monto = Convert.ToDouble(reader["monto"]),
-                                    fecha_pagar = Convert.ToDateTime(reader["fecha_a_pagar"]),
-                                    fecha_cancelada = Convert.ToDateTime(reader["fecha_cancelada"])
+                                    SaldoAnterior = Convert.ToDouble(reader["saldo_anterior"]),
+                                    SaldoActual = Convert.ToDouble(reader["saldo_actual"]),
+                                    Monto = Convert.ToDouble(reader["monto"]),
+                                    FechaPagar = Convert.ToDateTime(reader["fecha_a_pagar"]),
+                                    FechaCancelada = Convert.ToDateTime(reader["fecha_cancelada"])
                                 });
                             }
                         }

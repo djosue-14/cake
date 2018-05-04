@@ -1,45 +1,69 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-<!--meta http-equiv="Content-Type" content="text/html; charset=utf-8"/ -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!--meta name="viewport" content="width=device-width, initial-scale=1.0" -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Inmobiliaria</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-
+    <link rel="stylesheet" href="~/Content/materialize/css/materialize.min.css" />
+    @*<script src="~/Scripts/modernizr-2.6.2.js"></script>*@
+    <link rel="stylesheet" href="~/Content/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css"/>
+    <link rel="stylesheet" href="~/Content/Style.css" />
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top p-2">
-        @Html.ActionLink("Inmobiliaria", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-          aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarColor02">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    @Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })
-                    <span class="sr-only">(current)</span>
-                </li>
-                <li class="nav-item">
-                    @Html.ActionLink("Acerca de", "About", "Home", new { area = "" }, new { @class = "nav-link" })
-                </li>
-                <li class="nav-item">
-                    @Html.ActionLink("Contacto", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })
-                </li>
-                @Html.Partial("_LoginPartial")
-            </ul>
+    <div class="navbar-fixed">
+        <div class="nav-wrapper">
+            <nav class="light-blue accent-3">
+                <div class="nav-wrapper">
+                    @Html.ActionLink("Inmobiliaria", "Index", "Home", new { area = "" }, new { @class = "brand-logo" })
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                        @Html.Partial("_LoginPartial")
+                    </ul>
+                </div>
+            </nav>
         </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-    </div>
+    </div> 
+    <ul class="sidenav" id="mobile-demo">
+        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+        <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+        @Html.Partial("_LoginPartial")
+    </ul>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/popper")
+        <div class="container">
+            @RenderBody()
+        </div>
+
+    <!-- Inicio del Modal Para Cierre de Sesion -->
+    <div id="modalLogout" class="modal">
+        @using Microsoft.AspNet.Identity
+        <div class="modal-content">
+            <h4>Sesion</h4>
+            <p>@Html.ActionLink("Hola " + User.Identity.GetUserName() + "!", "Index", "Manage") Deseas salir de la aplicacion</p>
+        </div>
+        <div class="modal-footer">
+            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <a href="#!" class="modal-action modal-close waves-effect btn light-blue accent-3">Cancelar</a>
+                <button type="submit" class="waves-effect btn red accent-4">Cerrar Sesion</button>
+            }
+        </div>
+    </div>
+    <!--Fin del Modal para cierre de sesion-->
+
+    <script src="~/Scripts/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/respond.js"></script>
+    <script src="~/Content/materialize/js/materialize.min.js"></script>
+    <script src="~/Scripts/js/myscript.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

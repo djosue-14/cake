@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Agregar Promocion";
+}
+
+<div class="row">
+    <div class="col s12 m5 l4">
+        @using (Html.BeginForm("Save", "Promocion", FormMethod.Post))
+        {
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" class="validate" id="Cantidad" name="Cantidad"/>
+                    <label for="Cantidad">Cantidad</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" class="validate" id="Descripcion" name="Descripcion"/>
+                    <label for="Descripcion">Descripcion</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" class="datepicker" id="FechaInicio" name="FechaInicio"/>
+                    <label for="FechaInicio">Fecha de Inicio</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" class="datepicker" id="FechaFin" name="FechaFin"/>
+                    <label for="FechaFin">Fecha de Finalizacion</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <input type="submit" class="btn light-blue accent-3" value="Guardar" />
+                </div>
+            </div>
+        }
+    </div>    
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/js/materialscript.js")
+}

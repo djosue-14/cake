@@ -1,0 +1,89 @@
+﻿@model InmobiliariaViewModels.Empleados.EmpleadosIngresoViewModels
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+    <div class="col s12 m12 l12">
+        @using (Html.BeginForm("Edit", "Empleado", FormMethod.Post))
+        {
+            <div class="col s12 m4 l5">
+                <label for="Nombre">Nombre</label>
+                <input type="text" id="nombre_e" name="nombre_e" class="validate" value="@Model.nombre_e">
+            </div>
+            <div class="col s12 m4 l5">
+                <label for="Apellido">Apellido</label>
+                <input type="text" id="apellido_e" name="apellido_e" class="validate" value="@Model.apellido_e">
+            </div>
+            <div class="col s12 m4 l5">
+                <label for="dpi_e">DPI</label>
+                <input type="text" id="dpi_e" name="dpi_e" class="validate" value="@Model.dpi_e">
+            </div>
+            <div class="col s12 m4 l5">
+                <label for="tel_e">Telefono</label>
+                <input type="text" id="tel_e" name="tel_e" class="validate" value="@Model.tel_e">
+            </div>
+            <div class="col s12 m4 l5">
+                <select class="form-control" name="sexo_e">
+                    @if (Model.sexo_e == 1)
+                    {
+                        <option value="1" selected>Masculino</option>
+                        <option value="0"> Femenino </option>
+                    }
+                    else
+                    {
+                        <option value="0" selected>Femenino</option>
+                        <option value="1"> Masculino </option>
+                    }
+                </select>
+                <label for="sexo_e">Sexo</label>
+            </div>
+            <div class="col s12 m4 l5">
+                <label for="dire_e">Direccion</label>
+                <input type="text" id="dire_e" name="dire_e" class="validate" value="@Model.dire_e">
+            </div>
+            <div class="col s12 m4 l5">
+                <select name="cargo_e" id="cargo_e">
+                    @foreach (var c in Model.cargos)
+                    {
+                        if (c.id == Model.cargo_e)
+                        {
+                            <option value="@c.id" selected>@c.nombrecargo</option>
+
+                        }
+                        else
+                        {
+                            <option value="@c.id">@c.nombrecargo</option>
+                        }
+                    }
+                </select>
+                <label for="cargo_e">Cargo</label>
+            </div>
+            <div class="col s12 m4 l5">
+                <select name="estado_e" id="estado_e">
+                    @foreach (var s in Model.estados)
+                    {
+                        if (s.id == Model.estado_e)
+                        {
+                            <option value="@s.id" selected>@s.nestado</option>
+
+                        }
+                        else
+                        {
+                            <option value="@s.id">@s.nestado</option>
+                        }
+                    }
+                </select>
+                <label for="estado_e">Estado</label>
+            </div>
+            <div class="col s12 m4 l5">
+                <button type="submit" class="btn light-blue">Actualizar</button>
+            </div>
+           }
+        </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/js/materialscript.js")
+}

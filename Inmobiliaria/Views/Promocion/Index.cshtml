@@ -1,0 +1,68 @@
+﻿@model List<InmobiliariaViewModels.PromocionViewModels>
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<div class="row">
+    <div class="col s12 m12 l12">
+        <form action="/Promocion/Lotificadora" method="post">
+            <div class="row">
+                <div class="col s12 m5 l4">
+                    <div class="input-field col s12">
+                        <select name="Id" id="Id">
+                            <option value="" disabled selected>Elige tu opcion</option>
+                            <option value="1">Refugio</option>
+                            <option value="2">Perlas</option>
+                            <option value="3">America</option>
+                            <option value="4">Condado</option>
+                        </select>
+                        <label for="Id">Lotificadora</label>
+                    </div>
+                </div>
+                <div class="col s12 m5 l4">
+                    <input type="submit" class="btn light-blue accent-3" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12 m12 l12">
+
+        <div class="page-header">
+            <h4 id="tables" class="text-center">Promociones Actuales</h4>
+        </div>
+
+        <table class="striped responsive-table">
+            <thead>
+                <tr>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Fecha Inicio</th>
+                    <th scope="col">Fecha Fin</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td scope="col">@item.Cantidad</td>
+                        <td scope="col">@item.Descripcion</td>
+                        <td scope="col">@item.FechaInicio.ToString("dd-MM-yyyy")</td>
+                        <td scope="col">@item.FechaFin.ToString("dd-MM-yyyy")</td>
+                        <td>
+                            <a href="@Url.Action("Edit", "Promocion")/@item.Id">Editar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/js/materialscript.js")
+}

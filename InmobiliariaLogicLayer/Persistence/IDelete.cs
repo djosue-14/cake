@@ -8,6 +8,6 @@ namespace InmobiliariaLogicLayer.Persistence
 {
     public interface IDelete
     {
-        int Delete();
+        int Delete(int id);
     }
 }

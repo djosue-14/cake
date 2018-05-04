@@ -13,8 +13,4 @@ namespace InmobiliariaViewModels.Cuotas
         public int tiempo { get; set; }
         public double enganche { get; set; }
     }
-
-    public class CuotaSelectViewModels
-    {
-    }
 }

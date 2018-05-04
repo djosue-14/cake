@@ -1,0 +1,60 @@
+﻿@model InmobiliariaViewModels.PromocionViewModels
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+    <div class="col s12 m5 l4">
+        @using (Html.BeginForm("Edit", "Promocion", FormMethod.Post))
+        {
+            @Html.HiddenFor(m => m.Id);
+            @Html.ValidationSummary("", new { @class = "red-text" })
+            <div class="row">
+                <div class="input-field col s12">
+                    @Html.TextBoxFor(m => m.Cantidad, new { @class = "validate" })
+                    @Html.LabelFor(m => m.Cantidad)
+                    @Html.ValidationMessageFor(m => m.Cantidad, "", new { @class = "red-text" })
+                    <!--input type="text" class="validate" id="Cantidad" name="Cantidad" /-->
+                    <!--label for="Cantidad">Cantidad</label-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    @Html.TextBoxFor(m => m.Descripcion, new { @class = "validate" })
+                    @Html.LabelFor(m => m.Descripcion)
+                    @Html.ValidationMessageFor(m => m.Descripcion, "", new { @class = "red-text" })
+                    <!--input type="text" class="validate" id="Descripcion" name="Descripcion" /-->
+                    <!--label for="Descripcion">Descripcion</label-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    @Html.TextBoxFor(m => m.FechaInicio, new { @class = "datepicker" })
+                    @Html.LabelFor(m => m.FechaInicio, "Fecha Inicio")
+                    @Html.ValidationMessageFor(m => m.FechaInicio, "", new { @class = "red-text" })
+                    <!--input type="text" class="datepicker" id="FechaInicio" name="FechaInicio" /-->
+                    <!--label for="FechaInicio">Fecha de Inicio</label-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    @Html.TextBoxFor(m => m.FechaFin, new { @class = "datepicker" })
+                    @Html.LabelFor(m => m.FechaFin, "Fecha Fin")
+                    @Html.ValidationMessageFor(m => m.FechaFin, "", new { @class = "red-text" })
+                    <!--input type="text" class="datepicker" id="FechaFin" name="FechaFin" /-->
+                    <!--label for="FechaFin">Fecha de Finalizacion</label-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <input type="submit" class="btn light-blue accent-3" value="Guardar"/>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/js/materialscript.js")
+}

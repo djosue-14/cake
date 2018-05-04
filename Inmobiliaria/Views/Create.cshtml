@@ -1,0 +1,35 @@
+﻿@model InmobiliariaViewModels.Empleados.ReferenciaEmpViewModels
+
+@{
+    ViewBag.Title = "Ingresar Referencia del Empleado";
+}
+
+<div class="row">
+    <div class="col-lg-3">
+        <div class="bs-component">
+            @using (Html.BeginForm("Create", "ReferenciaEmp", FormMethod.Post))
+            {
+                <fieldset>
+                    <legend>Ingresar Referencia</legend>
+                    <div class="form-group">
+                        <label class="col-form-label" for="Nombre">Nombre</label>
+                        <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="Apellido">Apellido</label>
+                        <input type="text" name="apellido" class="form-control" placeholder="Apellido">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="Telefono">Telefono</label>
+                        <input type="text" name="tel" class="form-control" placeholder="Telefono">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label" for="Direccion">Direccion</label>
+                        <input type="text" name="direccion" class="form-control" placeholder="Direccion">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Aceptar</button>
+                </fieldset>
+            }
+        </div>
+    </div>
+</div>
