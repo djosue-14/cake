@@ -6,6 +6,7 @@
 
 <div class="row">
     <div class="col s12 m12 l12">
+        <h2 class="blue-text text-darken-1">Ingresar Cargo</h2>
         @using (Html.BeginForm("Create", "CargoEmp", FormMethod.Post))
         {
             <div class="col s12 m4 l5">
@@ -13,7 +14,7 @@
                 <input type="text" id="nombrecargo" name="nombrecargo" class="validate">
             </div>
                 <div class="col s12 m4 l5">
-                    <button type="submit" class="btn light-blue">Guardar</button>
+                    <button type="submit" class="btn light-blue"><i class="fas fa-save"></i>Guardar</button>
                 </div>
         }
     </div>

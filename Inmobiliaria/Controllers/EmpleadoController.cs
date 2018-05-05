@@ -21,6 +21,15 @@ namespace Inmobiliaria.Controllers
             return View(listaemp);
         }
 
+        public ActionResult GetForId(int id)
+        {
+            Empleados _empleado = new Empleados(new DBEmpleados());
+            ReferenciaEmp _refemp = new ReferenciaEmp(new DBReferenciaEmp());
+            var empleado = _empleado.SelectForId(id);
+            empleado.referencias = _refemp.FindForEmp(id);
+            return View(empleado);
+        }
+
         public ActionResult Create()
         {
             ViewBag.Title = "Ingresar Empleado";

@@ -376,6 +376,7 @@
     <Content Include="Views\EstadoEmp\Index.cshtml" />
     <Content Include="Views\EstadoEmp\Create.cshtml" />
     <Content Include="Views\EstadoEmp\Edit.cshtml" />
+    <Content Include="Views\Empleado\GetForId.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

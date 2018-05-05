@@ -21,11 +21,41 @@
                         <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                         <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                         @Html.Partial("_LoginPartial")
+                        <li>
+                            <a class="dropdown-trigger" href="#!" data-target="dropdown1">
+                                Empleados
+                                <i class="fas fa-caret-down"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-trigger" href="#!" data-target="dropdown2">
+                                Clientes
+                                <i class="fas fa-caret-down"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
         </div>
-    </div> 
+    </div>
+    <!--Desplegable Empleados-->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="@Url.Action("Index","Empleado")">Empleados</a></li>
+        <li><a href="@Url.Action("Create","Empleado")">Agregar Empleado</a></li>
+        <li class="divider"></li>
+        <li><a href="@Url.Action("Index","CargoEmp")">Cargos</a></li>
+        <li><a href="@Url.Action("Create","CargoEmp")">Agregar Cargo</a></li>
+        <li class="divider"></li>
+        <li><a href="@Url.Action("Index","EstadoEmp")">Estados</a></li>
+        <li><a href="@Url.Action("Create","EstadoEmp")">Agregar Estado</a></li>
+    </ul>
+
+    <!--Desplegable Clientes-->
+    <ul id="dropdown2" class="dropdown-content">
+        <li><a href="#!">Clientes</a></li>
+        <li><a href="#!">Agregar</a></li>
+    </ul>
+     
     <ul class="sidenav" id="mobile-demo">
         <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
         <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
@@ -62,6 +92,7 @@
     <script>
         $(document).ready(function () {
             $('.modal').modal();
+            $('.dropdown-trigger').dropdown();
         });
     </script>
     @RenderSection("scripts", required: false)

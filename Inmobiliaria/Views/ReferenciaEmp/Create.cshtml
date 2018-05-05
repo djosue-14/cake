@@ -4,31 +4,29 @@
 }
 
 <div class="row">
-    <div class="col-lg-3">
-        <div class="bs-component">
-            @using (Html.BeginForm("Create", "ReferenciaEmp", FormMethod.Post))
-            {
-                <fieldset>
-                    <legend>Ingresar Referencia</legend>
-                    <div class="form-group">
-                        <label class="col-form-label" for="Nombre">Nombre</label>
-                        <input type="text" name="nombre" class="form-control" placeholder="Nombre">
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label" for="Apellido">Apellido</label>
-                        <input type="text" name="apellido" class="form-control" placeholder="Apellido">
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label" for="Telefono">Telefono</label>
-                        <input type="text" name="tel" class="form-control" placeholder="Telefono">
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label" for="Direccion">Direccion</label>
-                        <input type="text" name="direccion" class="form-control" placeholder="Direccion">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Aceptar</button>
-                </fieldset>
-            }
-        </div>
+    <div class="col s12 m12 l12">
+        <h2 class="blue-text text-darken-1">Ingresar Referencia</h2>
+        @using (Html.BeginForm("Create", "ReferenciaEmp", FormMethod.Post))
+        {
+
+            <div class="col s12 m4 l5">
+                <label class="col-form-label" for="Nombre">Nombre</label>
+                <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+            </div>
+            <div class="col s12 m4 l5">
+                <label class="col-form-label" for="Apellido">Apellido</label>
+                <input type="text" name="apellido" class="form-control" placeholder="Apellido">
+            </div>
+            <div class="col s12 m4 l5">
+                <label class="col-form-label" for="Telefono">Telefono</label>
+                <input type="text" name="tel" class="form-control" placeholder="Telefono">
+            </div>
+            <div class="col s12 m4 l5">
+                <label class="col-form-label" for="Direccion">Direccion</label>
+                <input type="text" name="direccion" class="form-control" placeholder="Direccion">
+            </div>
+                    <button type="submit" class="btn light-blue"><i class="fas fa-save"></i> Aceptar</button>
+
+        }
     </div>
 </div>

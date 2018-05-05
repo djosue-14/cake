@@ -24,5 +24,6 @@ namespace InmobiliariaViewModels.Empleados
         public List<CargoEmpViewModels> cargos { get; set; }
 
         public List<EstadoEmpViewModels> estados { get; set; }
+        public IEnumerable<ReferenciaEmpViewModels> referencias { get; set; }
     }
 }

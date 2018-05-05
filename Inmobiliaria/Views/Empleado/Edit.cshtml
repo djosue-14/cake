@@ -5,6 +5,9 @@
 
 <div class="row">
     <div class="col s12 m12 l12">
+        <div class="page-header">
+            <h4 id="tables" class="text-center blue-text text-darken-1">Editar Empleado</h4>
+        </div>
         @using (Html.BeginForm("Edit", "Empleado", FormMethod.Post))
         {
             <div class="col s12 m4 l5">
@@ -24,6 +27,7 @@
                 <input type="text" id="tel_e" name="tel_e" class="validate" value="@Model.tel_e">
             </div>
             <div class="col s12 m4 l5">
+                <label for="sexo_e">Sexo</label>
                 <select class="form-control" name="sexo_e">
                     @if (Model.sexo_e == 1)
                     {
@@ -36,13 +40,13 @@
                         <option value="1"> Masculino </option>
                     }
                 </select>
-                <label for="sexo_e">Sexo</label>
             </div>
             <div class="col s12 m4 l5">
                 <label for="dire_e">Direccion</label>
                 <input type="text" id="dire_e" name="dire_e" class="validate" value="@Model.dire_e">
             </div>
             <div class="col s12 m4 l5">
+                <label for="cargo_e">Cargo</label>
                 <select name="cargo_e" id="cargo_e">
                     @foreach (var c in Model.cargos)
                     {
@@ -57,9 +61,9 @@
                         }
                     }
                 </select>
-                <label for="cargo_e">Cargo</label>
             </div>
             <div class="col s12 m4 l5">
+                <label for="estado_e">Estado</label>
                 <select name="estado_e" id="estado_e">
                     @foreach (var s in Model.estados)
                     {
@@ -74,7 +78,6 @@
                         }
                     }
                 </select>
-                <label for="estado_e">Estado</label>
             </div>
             <div class="col s12 m4 l5">
                 <button type="submit" class="btn light-blue">Actualizar</button>

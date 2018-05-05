@@ -1,0 +1,62 @@
+﻿@model InmobiliariaViewModels.Empleados.EmpleadosIngresoViewModels
+@{
+    ViewBag.Title = "GetForId";
+}
+
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="row">
+                <h2 class="blue-text text-darken-1">Datos del Empleado</h2>
+                <ul>
+                    <li><b>Nombre:</b> <i>@Model.nombre_e @Model.apellido_e</i></li>
+                    
+                    <li><b>Fecha de Nacimiento:</b>  <i>@Model.fecha_nac_e.ToString("dd/MM/yyyy")</i></li>
+                    <li><b>DPI:</b> <i>@Model.dpi_e</i></li>
+                    <li><b>Telefono:</b> <i>@Model.tel_e</i></li>
+                    <li><b>Direccion:</b> <i>@Model.dire_e</i></li>
+                </ul>
+                <div class="col s12">
+                    <a href="@Url.Action("Delete", "Empleado")/@Model.id" class="btn-small red"><i class="fas fa-trash"></i> Eliminar</a>
+                    <a href="@Url.Action("Edit", "Empleado")/@Model.id" class="btn-small orange"><i class="fas fa-edit"></i> Editar</a>
+                    <a href="@Url.Action("EnviarId", "ReferenciaEmp")/@Model.id" class="btn-small blue"><i class="fas fa-plus"></i> Agregar Referencia</a>
+                </div>
+               
+            </div>
+            <div class="row">
+                <h4 class="green-text text-accent-3">Datos de las Referencias</h4>
+                
+                    <table class="striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Direccion</th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.referencias)
+                                {
+                                <tr>
+                                    <td scope="col">@item.nombre @item.apellido</td>
+                                    <td scope="col">@item.direccion</td>
+                                    <td scope="col">@item.tel</td>
+                                    <td>
+                                        <a href="@Url.Action("Delete", "ReferenciaEmp")/@item.id" class="btn-small red"><i class="fas fa-trash"></i> Eliminar</a>
+                                        <a href="@Url.Action("Edit", "ReferenciaEmp")/@item.id" class="btn-small orange"><i class="fas fa-edit"></i> Editar</a>
+                                    </td>
+                                    
+                                </tr>
+                            }
+                        </tbody>
+                    </table>                
+                
+            </div>
+        </div>
+    </div>
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/Scripts/js/materialscript.js")
+    }
