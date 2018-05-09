@@ -8,25 +8,31 @@
         <h2 class="blue-text text-darken-1">Ingresar Referencia</h2>
         @using (Html.BeginForm("Create", "ReferenciaEmp", FormMethod.Post))
         {
-
-            <div class="col s12 m4 l5">
-                <label class="col-form-label" for="Nombre">Nombre</label>
-                <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+            <div class="input-field col s12 m4 l5">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" class="validate" />
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" id="apellido" class="Apellido" />
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <label for="tel">Telefono</label>
+                <input type="text" name="tel" id="tel" class="validate">
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <label for="direccion">Direccion</label>
+                <input type="text" name="direccion" id="direccion" class="form-control" >
             </div>
             <div class="col s12 m4 l5">
-                <label class="col-form-label" for="Apellido">Apellido</label>
-                <input type="text" name="apellido" class="form-control" placeholder="Apellido">
+                <button type="submit" class="btn light-blue"><i class="fas fa-save"></i> Aceptar</button>
             </div>
-            <div class="col s12 m4 l5">
-                <label class="col-form-label" for="Telefono">Telefono</label>
-                <input type="text" name="tel" class="form-control" placeholder="Telefono">
-            </div>
-            <div class="col s12 m4 l5">
-                <label class="col-form-label" for="Direccion">Direccion</label>
-                <input type="text" name="direccion" class="form-control" placeholder="Direccion">
-            </div>
-                    <button type="submit" class="btn light-blue"><i class="fas fa-save"></i> Aceptar</button>
 
         }
     </div>
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/js/materialscript.js")
+}

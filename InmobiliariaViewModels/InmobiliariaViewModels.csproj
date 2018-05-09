@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clientes\BeneficiarioViewModels.cs" />
+    <Compile Include="Clientes\ClienteInsertViewModels.cs" />
+    <Compile Include="Clientes\ClienteReferenciaViewModels.cs" />
+    <Compile Include="Clientes\ClienteUpdateViewModels.cs" />
+    <Compile Include="Clientes\ListaClientViewModels.cs" />
     <Compile Include="Cuotas\CalcularCuotaViewModels.cs" />
     <Compile Include="Cuotas\CuotasViewModels.cs" />
     <Compile Include="Cuotas\MoraViewModels.cs" />
@@ -49,6 +54,9 @@
     <Compile Include="Empleados\EstadoEmpViewModels.cs" />
     <Compile Include="Empleados\ReferenciaEmpViewModels.cs" />
     <Compile Include="EstadoCuenta\PagosSelectViewModels.cs" />
+    <Compile Include="Lotes\ListaLoteViewModels.cs" />
+    <Compile Include="Lotes\LoteIngresoViewModels.cs" />
+    <Compile Include="Lotes\LoteUpdateViewModels.cs" />
     <Compile Include="Pagos\EstadoPagosViewModels.cs" />
     <Compile Include="PromocionViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

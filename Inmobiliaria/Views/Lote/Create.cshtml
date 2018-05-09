@@ -1,0 +1,60 @@
+﻿@model InmobiliariaViewModels.Lotes.LoteIngresoViewModels
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="row">
+    <div class="col s12 m12 l12">
+        <h2 class="blue-text text-darken-1">Ingresar Lote</h2>
+        @using (Html.BeginForm("Create", "Lote", FormMethod.Post))
+        {
+            <div class="input-field col s12 m4 l5">
+                <label for="numero">Numero</label>
+                <input type="text" name="numero" id="numero" class="validate" />
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="largo">Largo</label>
+                <input type="text" name="largo" id="largo" class="validate" />
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="ancho">Ancho</label>
+                <input type="text" name="ancho" class="validate" id="ancho" />
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="mts_cuadrados">Metros Cuadrados</label>
+                <input type="text" name="mts_cuadrados" class="validate" id="mts_cuadrados" />
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="precio_lote">Precio</label>
+                <input type="text" name="precio_lote" class="validate" id="precio_lote" />
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="manzana_id">Manzana</label>
+                <input type="text" name="manzana_id" class="validate" id="manzana_id" />
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="lotificadora_id">Lotificadora</label>
+                <input type="text" name="lotificadora_id" class="validate" id="lotificadora_id" />
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <select name="estado_id" id="estado_id">
+                    <option value='1'>Disponible</option>
+                    <option value='2'>Reservado</option>
+                    <option value='3'>Vendido</option>
+                </select>
+                <label for="estado_id">estado_id</label>
+            </div>
+
+            <div class="col s12 m4 l5">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        }
+    </div>
+</div>

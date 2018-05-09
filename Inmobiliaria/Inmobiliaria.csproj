@@ -177,14 +177,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BeneficiarioController.cs" />
     <Compile Include="Controllers\CargoEmpController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\CuotaController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\EstadoCuentaController.cs" />
     <Compile Include="Controllers\EstadoEmpController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoteController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PromocionController.cs" />
+    <Compile Include="Controllers\ReferenciaController.cs" />
     <Compile Include="Controllers\ReferenciaEmpController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -377,6 +381,16 @@
     <Content Include="Views\EstadoEmp\Create.cshtml" />
     <Content Include="Views\EstadoEmp\Edit.cshtml" />
     <Content Include="Views\Empleado\GetForId.cshtml" />
+    <Content Include="Views\Beneficiario\Create.cshtml" />
+    <Content Include="Views\Beneficiario\Index.cshtml" />
+    <Content Include="Views\Cliente\Create.cshtml" />
+    <Content Include="Views\Cliente\Edit.cshtml" />
+    <Content Include="Views\Cliente\GetForId.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Lote\Create.cshtml" />
+    <Content Include="Views\Lote\Index.cshtml" />
+    <Content Include="Views\Referencia\Create.cshtml" />
+    <Content Include="Views\Referencia\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

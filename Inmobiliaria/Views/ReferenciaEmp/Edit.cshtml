@@ -8,23 +8,25 @@
         <h2 class="blue-text text-darken-1">Editar Referencia</h2>
         @using (Html.BeginForm("Edit", "ReferenciaEmp", FormMethod.Post))
             {
-            <div class="col s12 m4 l5">
-                <label class="col-form-label" for="Nombre">Nombre</label>
-                <input type="text" name="nombre" class="form-control" value="@Model.nombre">
+            <div class="input-field col s12 m4 l5">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" class="validate" value="@Model.nombre">
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" id="apellido" class="validate" value="@Model.apellido">
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <label for="tel">Telefono</label>
+                <input type="text" name="tel" id="tel" class="validate" value="@Model.tel">
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <label for="direccion">Direccion</label>
+                <input type="text" name="direccion" id="direccion" class="validate" value="@Model.direccion">
             </div>
             <div class="col s12 m4 l5">
-                <label class="col-form-label" for="Apellido">Apellido</label>
-                <input type="text" name="apellido" class="form-control" value="@Model.apellido">
+                <button type="submit" class="btn light-blue">Actualizar</button>
             </div>
-            <div class="col s12 m4 l5">
-                <label class="col-form-label" for="Telefono">Telefono</label>
-                <input type="text" name="tel" class="form-control" value="@Model.tel">
-            </div>
-            <div class="col s12 m4 l5">
-                <label class="col-form-label" for="Direccion">Direccion</label>
-                <input type="text" name="direccion" class="form-control" value="@Model.direccion">
-            </div>
-                    <button type="submit" class="btn light-blue">Actualizar</button>
         }
     </div>
 </div>

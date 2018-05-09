@@ -33,6 +33,12 @@
                                 <i class="fas fa-caret-down"></i>
                             </a>
                         </li>
+                        <li>
+                            <a class="dropdown-trigger" href="#!" data-target="dropdown3">
+                                Lotes
+                                <i class="fas fa-caret-down"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -52,8 +58,20 @@
 
     <!--Desplegable Clientes-->
     <ul id="dropdown2" class="dropdown-content">
-        <li><a href="#!">Clientes</a></li>
-        <li><a href="#!">Agregar</a></li>
+        <li><a href="@Url.Action("Index","Cliente")">Clientes</a></li>
+        <li><a href="@Url.Action("Create","Cliente")">Agregar Cliente</a></li>
+        <li class="divider"></li>
+        <li><a href="@Url.Action("Index","Referencia")">Referencias</a></li>
+        <li><a href="@Url.Action("Create","Referencia")">Agregar Referencia</a></li>
+        <li class="divider"></li>
+        <li><a href="@Url.Action("Index","Beneficiario")">Beneficiario</a></li>
+        <li><a href="@Url.Action("Create","Beneficiario")">Agregar Beneficiario</a></li>
+    </ul>
+
+    <!--Desplegable Lotes-->
+    <ul id="dropdown3" class="dropdown-content">
+        <li><a href="@Url.Action("Index","Lote")">Clientes</a></li>
+        <li><a href="@Url.Action("Create","Lote")">Agregar Cliente</a></li>
     </ul>
      
     <ul class="sidenav" id="mobile-demo">
@@ -86,7 +104,7 @@
     <!--Fin del Modal para cierre de sesion-->
 
     <script src="~/Scripts/js/jquery-3.3.1.min.js"></script>
-    <script src="~/Scripts/respond.js"></script>
+    @*<script src="~/Scripts/respond.js"></script>*@
     <script src="~/Content/materialize/js/materialize.min.js"></script>
     <script src="~/Scripts/js/myscript.js"></script>
     <script>

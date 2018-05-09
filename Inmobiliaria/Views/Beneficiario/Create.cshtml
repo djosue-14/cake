@@ -1,0 +1,55 @@
+﻿@model InmobiliariaViewModels.Clientes.BeneficiarioViewModels
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="row">
+    <div class="col s12 m12 l12">
+        <h2 class="blue-text text-darken-1">Ingresar Beneficiario</h2>
+        @using (Html.BeginForm("Create", "Beneficiario", FormMethod.Post))
+        {
+            <div class="input-field col s12 m4 l5">
+                <label for="Nombre">Nombre</label>
+                <input type="text" name="Nombre" id="Nombre" class="validate" />
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="Apellido">Apellido</label>
+                <input type="text" name="Apellido" id="Apellido" class="validate" />
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="Dpi">Dpi</label>
+                <input type="text" name="Dpi" id="Dpi" class="validate" />
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="Telefono">Telefono</label>
+                <input type="text" name="Telefono" id="Telefono" class="validate" />
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="Direccion">Direccion</label>
+                <input type="text" name="Direccion" id="Direccion" class="validate" />
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="Sexo">Sexo</label>
+                <input type="text" name="Sexo" id="Sexo" class="validate" />
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="ClienteId">Cliente</label>
+                <input type="text" name="ClienteId" id="ClienteId" class="validate" />
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        }
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/js/materialscript.js")
+}

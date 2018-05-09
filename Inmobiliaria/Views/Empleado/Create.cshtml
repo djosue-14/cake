@@ -8,56 +8,56 @@
         <h2 class="blue-text text-darken-1">Ingresar Empleado</h2>
         @using (Html.BeginForm("Create", "Empleado", FormMethod.Post))
         {
-            <div class="col s12 m4 l5">
+            <div class="input-field col s12 m4 l5">
                 <label for="Nombre">Nombre</label>
                 <input type="text" id="nombre_e" name="nombre_e" class="validate" >
             </div>
-            <div class="col s12 m4 l5">
+            <div class="input-field col s12 m4 l5">
                 <label for="Apellido">Apellido</label>
                 <input type="text" id="apellido_e" name="apellido_e" class="validate" >
             </div>
-            <div class="col s12 m4 l5">
+            <div class="input-field col s12 m4 l5">
                 <label for="dpi_e">DPI</label>
                 <input type="text" id="dpi_e" name="dpi_e" class="validate" >
             </div>
-            <div class="col s12 m4 l5">
+            <div class="input-field col s12 m4 l5">
                 <label for="tel_e">Telefono</label>
                 <input type="text" id="tel_e" name="tel_e" class="validate" >
             </div>
-            <div class="col s12 m4 l5">
-                <label for="sexo_e">Sexo</label>
-                    <select class="form-control" name="sexo_e">
+            <div class="input-field col s12 m4 l5">
+                <select class="form-control" name="sexo_e">
                     <option value="1">Masculino</option>
                     <option value="0">Femenino</option>
                 </select>
+                <label for="sexo_e">Sexo</label>
             </div>
-            <div class="col s12 m4 l5">
+            <div class="input-field col s12 m4 l5">
                 <label for="fecha_nac_e">Fecha de Nacimiento</label>
                 <input type="text" id="fecha_nac_e" name="fecha_nac_e" class="datepicker">
             </div>
-                <div class="col s12 m4 l5">
+                <div class="input-field col s12 m4 l5">
                     <label for="dire_e">Direccion</label>
                     <input type="text" id="dire_e" name="dire_e" class="validate">
                 </div>
-                <div class="col s12 m4 l5">
-                    <label for="cargo_e">Cargo</label>
+                <div class="input-field col s12 m4 l5">
                     <select name="cargo_e" id="cargo_e">
                         @foreach (var c in Model.cargos)
                         {
                             <option value="@c.id">@c.nombrecargo</option>
                         }
                     </select>
+                    <label for="cargo_e">Cargo</label>
                 </div>
-                <div class="col s12 m4 l5">
-                    <label for="cargo_e">Estado</label>
+                <div class="input-field col s12 m4 l5">
                     <select name="estado_e" id="estado_e">
                         @foreach (var c in Model.estados)
                         {
                             <option value="@c.id">@c.nestado</option>
                         }
                     </select>
+                    <label for="cargo_e">Estado</label>
                 </div>
-                <div class="col s12 m4 l5">
+                <div class="input-field col s12 m4 l5">
                     <button type="submit" class="btn light-blue"><i class="fas fa-save"></i> Guardar</button>
                 </div>
                 }

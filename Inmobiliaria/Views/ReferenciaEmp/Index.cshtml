@@ -2,41 +2,34 @@
 @{
     ViewBag.Title = "Index";
 }
-
 <div class="row">
-    <div class="col-lg-12">
-        <div class="page-header">
-            <h4 id="tables" class="text-center">Referencia de Empleado</h4>
-        </div>
-        <div class="bs-component">
-            <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead class="thead-light">
-                        <tr>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
-                            <th scope="col">Telefono</th>
-                            <th scope="col">Direccion</th>    
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td scope="col">@item.nombre</td>
-                                <td scope="col">@item.apellido</td>
-                                <td scope="col">@item.tel</td>
-                                <td scope="col">@item.direccion</td>
-                                <td>
+    <div class="col s12 m12 l12">
+        <h4 id="tables" class="text-center blue-text text-darken-1">Tabla Referencias</h4>
 
-                                    <a href="@Url.Action("Delete", "ReferenciaEmp")/@item.id" class="btn btn-primary">Eliminar</a>
-                                    <a href="@Url.Action("Edit", "ReferenciaEmp")/@item.id" class="btn btn-primary">Modificar</a>
-                               </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <table class="striped responsive-table">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Direccion</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td scope="col">@item.nombre</td>
+                        <td scope="col">@item.apellido</td>
+                        <td scope="col">@item.tel</td>
+                        <td scope="col">@item.direccion</td>
+                        <td>
+                            <a href="@Url.Action("Delete", "ReferenciaEmp")/@item.id" class="btn btn-primary">Eliminar</a>
+                            <a href="@Url.Action("Edit", "ReferenciaEmp")/@item.id" class="btn btn-primary">Modificar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>

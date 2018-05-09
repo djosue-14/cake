@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clientes\Beneficiario.cs" />
+    <Compile Include="Clientes\Cliente.cs" />
+    <Compile Include="Clientes\Referencia.cs" />
     <Compile Include="Cuotas\CuotasPorFinanciamiento.cs" />
     <Compile Include="Cuotas\Moras\IMora.cs" />
     <Compile Include="Cuotas\Moras\Mora.cs" />
@@ -53,6 +56,7 @@
     <Compile Include="Lotes\Intereses\Interes.cs" />
     <Compile Include="Lotes\ILoteComponent.cs" />
     <Compile Include="Cuotas\CuotasPorMes.cs" />
+    <Compile Include="Lotes\Lote.cs" />
     <Compile Include="Lotes\PrecioLote.cs" />
     <Compile Include="Lotes\PrecioLoteDecorators\DescuentoLote.cs" />
     <Compile Include="Lotes\PrecioLoteDecorators\EngancheLote.cs" />

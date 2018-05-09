@@ -48,12 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clientes\BdClientes.cs" />
+    <Compile Include="Clientes\DBBeneficiario.cs" />
+    <Compile Include="Clientes\DBReferencia.cs" />
     <Compile Include="Connection\PostConnection.cs" />
     <Compile Include="Cuotas\DBCuota.cs" />
     <Compile Include="Empleados\DBCargoEmp.cs" />
     <Compile Include="Empleados\DBEmpleados.cs" />
     <Compile Include="Empleados\DBEstadoEmp.cs" />
     <Compile Include="Empleados\DBReferenciaEmp.cs" />
+    <Compile Include="Lote\DBLote.cs" />
     <Compile Include="Pagos\DBCalcMora.cs" />
     <Compile Include="Pagos\DBMoras.cs" />
     <Compile Include="Pagos\DBPagos.cs" />

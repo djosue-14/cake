@@ -8,11 +8,11 @@
         <h2 class="blue-text text-darken-1">Ingresar Estado</h2>
         @using (Html.BeginForm("Create", "EstadoEmp", FormMethod.Post))
         {
-            <div class="col s12 m4 l5">
+            <div class="input-field col s12 m4 l5">
                 <label for="Nombre">Nombre</label>
                 <input type="text" id="nestado" name="nestado" class="validate">
             </div>
-            <div class="col s12 m4 l5">
+            <div class="input-field col s12 m4 l5">
                 <button type="submit" class="btn light-blue"><i class="fas fa-save"></i>Guardar</button>
             </div>
         }
