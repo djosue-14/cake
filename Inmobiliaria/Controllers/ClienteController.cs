@@ -25,9 +25,11 @@ namespace Inmobiliaria.Controllers
         {
             Cliente _cliente = new Cliente(new BdClientes());
             Referencia _referencia = new Referencia(new DBReferencia());
-
+           Beneficiario _beneficiario = new Beneficiario(new DBBeneficiario());
             var cliente = _cliente.SelectForId(id);
+          //  var beneficiario = _beneficiario.SelectForId(id);
             cliente.referencias = _referencia.RefForCliente(id);
+            cliente.beneficiario = _beneficiario.BenefForCliente(id);
 
             return View(cliente);
         }
@@ -35,7 +37,13 @@ namespace Inmobiliaria.Controllers
         public ActionResult Create()
         {
             ViewBag.Title = "Ingresar Cliente";
-            return View(); 
+
+            DBEstadoCli dbestadocli = new DBEstadoCli();
+            EstadoCli estado = new EstadoCli(dbestadocli);
+
+            ClienteInsertViewModels cli = new ClienteInsertViewModels();
+            cli.estados = estado.SelectAll();
+            return View(cli); 
         }
 
         [HttpPost]
@@ -54,10 +62,15 @@ namespace Inmobiliaria.Controllers
         {
             BdClientes bdClientes = new BdClientes();
             Cliente cliente = new Cliente(bdClientes);
-            var cli = cliente.SelectForId(id);
-            
-                
-            return View(cli);
+            DBEstadoCli dbestadocli = new DBEstadoCli();
+            EstadoCli estado = new EstadoCli(dbestadocli);
+
+            ClienteInsertViewModels cli2 = new ClienteInsertViewModels();
+
+            cli2 = cliente.SelectForId(id);
+            cli2.estados = estado.SelectAll();
+              
+            return View(cli2);
         }
 
         [HttpPost]
@@ -66,6 +79,14 @@ namespace Inmobiliaria.Controllers
             BdClientes bdClientes = new BdClientes();
             Cliente cliente = new Cliente(bdClientes);
             cliente.Update(datos);
+            return RedirectToAction("Index", "Cliente");
+        }
+
+        public ActionResult Delete (int id)
+        {
+            BdClientes bdcliente = new BdClientes();
+            Cliente cliente = new Cliente(bdcliente);
+            cliente.Delete(id);
             return RedirectToAction("Index", "Cliente");
         }
     }

@@ -1,0 +1,25 @@
+﻿@model InmobiliariaViewModels.Venta.VentaViewModels
+
+<h5>@Model.Cliente.nombre @Model.Cliente.apellido</h5>
+<h5>@Model.Cliente.direccion</h5>
+<hr />
+
+<h5>@Model.Empleado.nombre_e @Model.Empleado.apellido_e</h5>
+<hr />
+
+<h5>@Model.Lote.numero @Model.Lote.largo @Model.Lote.ancho @Model.Lote.mts_cuadrados @Model.Lote.precio_lote</h5>
+<hr />
+
+<h5>Cantidad: @Model.Cuota.cantidad  Interes: @Model.Cuota.interes Cuota: @Model.Cuota.cuota 
+    Tiempo: @Model.Cuota.tiempo Enganche: @Model.Cuota.enganche Descuento: @Model.Cuota.descuento</h5>
+<hr />
+
+@using (Html.BeginForm("SaveVentaCredito", "Venta", FormMethod.Post))
+{
+    <input type="submit" class="btn light-blue" value="Credito">
+}
+
+@using (Html.BeginForm("SaveVentaContado", "Venta", FormMethod.Post))
+{
+    <input type="submit" class="btn light-blue" value="Contado">
+}

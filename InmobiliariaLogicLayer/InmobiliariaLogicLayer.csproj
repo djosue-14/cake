@@ -42,27 +42,31 @@
   <ItemGroup>
     <Compile Include="Clientes\Beneficiario.cs" />
     <Compile Include="Clientes\Cliente.cs" />
+    <Compile Include="Clientes\EstadoCli.cs" />
     <Compile Include="Clientes\Referencia.cs" />
     <Compile Include="Cuotas\CuotasPorFinanciamiento.cs" />
-    <Compile Include="Cuotas\Moras\IMora.cs" />
-    <Compile Include="Cuotas\Moras\Mora.cs" />
-    <Compile Include="Cuotas\Moras\MoraCompuesta.cs" />
-    <Compile Include="Cuotas\Moras\MoraSimple.cs" />
+    <Compile Include="Cuotas\CuotaVenta.cs" />
+    <Compile Include="Cuotas\Moras\Moras.cs" />
     <Compile Include="Empleados\CargoEmp.cs" />
     <Compile Include="Empleados\Empleados.cs" />
     <Compile Include="Empleados\EstadoEmp.cs" />
     <Compile Include="Empleados\ReferenciaEmp.cs" />
     <Compile Include="Lotes\Descuentos\Descuentos.cs" />
+    <Compile Include="Lotes\EstadoLote.cs" />
     <Compile Include="Lotes\Intereses\Interes.cs" />
     <Compile Include="Lotes\ILoteComponent.cs" />
     <Compile Include="Cuotas\CuotasPorMes.cs" />
     <Compile Include="Lotes\Lote.cs" />
+    <Compile Include="Lotes\Manzana.cs" />
     <Compile Include="Lotes\PrecioLote.cs" />
     <Compile Include="Lotes\PrecioLoteDecorators\DescuentoLote.cs" />
     <Compile Include="Lotes\PrecioLoteDecorators\EngancheLote.cs" />
     <Compile Include="Lotes\PrecioLoteDecorators\InteresLote.cs" />
     <Compile Include="Lotes\PrecioLoteDecorators\LoteDecorator.cs" />
     <Compile Include="Lotes\Promocion.cs" />
+    <Compile Include="Lotificadora\Gastos.cs" />
+    <Compile Include="Lotificadora\Lotificadora.cs" />
+    <Compile Include="Lotificadora\Viaticos.cs" />
     <Compile Include="Pagos\EstadoPagos.cs" />
     <Compile Include="Persistence\IDelete.cs" />
     <Compile Include="Persistence\ISave.cs" />
@@ -72,6 +76,7 @@
     <Compile Include="Persistence\IUpdate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Decimales\PuntoDecimal.cs" />
+    <Compile Include="Venta\TipoVenta.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InmobiliariaViewModels\InmobiliariaViewModels.csproj">
@@ -79,6 +84,7 @@
       <Name>InmobiliariaViewModels</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

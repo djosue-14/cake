@@ -10,5 +10,6 @@ namespace InmobiliariaViewModels.Empleados
     {
         public int id { get; set; }
         public string nombrecargo { get; set; }
+        public double sueldo { get; set; }
     }
 }

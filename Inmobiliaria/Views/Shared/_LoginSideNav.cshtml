@@ -1,0 +1,75 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    <li class="no-padding">
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header">Empleados</div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="@Url.Action("Index","Empleado")">Empleados</a></li>
+                        <li><a href="@Url.Action("Create","Empleado")">Agregar Empleado</a></li>
+                        <li class="divider"></li>
+                        <li><a href="@Url.Action("Index","CargoEmp")">Cargos</a></li>
+                        <li><a href="@Url.Action("Create","CargoEmp")">Agregar Cargo</a></li>
+                        <li class="divider"></li>
+                        <li><a href="@Url.Action("Index","EstadoEmp")">Estados</a></li>
+                        <li><a href="@Url.Action("Create","EstadoEmp")">Agregar Estado</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header">Clientes</div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="@Url.Action("Index","Cliente")">Clientes</a></li>
+                        <li><a href="@Url.Action("Create","Cliente")">Agregar Cliente</a></li>
+                        <li class="divider"></li>
+                        <li><a href="@Url.Action("Index","Referencia")">Referencias</a></li>
+                        <li><a href="@Url.Action("Create","Referencia")">Agregar Referencia</a></li>
+                        <li class="divider"></li>
+                        <li><a href="@Url.Action("Index","Beneficiario")">Beneficiario</a></li>
+                        <li><a href="@Url.Action("Create","Beneficiario")">Agregar Beneficiario</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header">Lotificadora</div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="@Url.Action("Index","Lotificadora")">Lotificadora</a></li>
+                        <li class="divider"></li>
+                        <li><a href="@Url.Action("Index","Gastos")">Gastos</a></li>
+                        <li><a href="@Url.Action("Create","Gastos")">Agregar Gastos</a></li>
+                        <li class="divider"></li>
+                        <li><a href="@Url.Action("Index","Viaticos")">Viaticos</a></li>
+                        <li><a href="@Url.Action("Create","Viaticos")">Agregar Viaticos</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header">Lote</div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="@Url.Action("Index","Lote")">Lotes</a></li>
+                        <li><a href="@Url.Action("Create","Lote")">Agregar Lote</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <li><a class="modal-trigger" href="#modalLogout">Salir</a></li>
+}
+else
+{
+    <li class="no-padding">
+        <ul class="collapsible">
+            <li>
+                @Html.ActionLink("Registrarse", "Register", "Account")
+            </li>
+            <li>
+                @Html.ActionLink("Iniciar sesión", "Login", "Account")
+            </li>
+        </ul>
+    </li>
+}

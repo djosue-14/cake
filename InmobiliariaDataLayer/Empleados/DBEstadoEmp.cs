@@ -36,7 +36,6 @@ namespace InmobiliariaDataLayer.Empleados
                             {
                                 lista.Add(new EstadoEmpViewModels()
                                 {
-
                                     id = Convert.ToInt16(reader["id"]),
                                     nestado = reader["estadoemp"].ToString(),
                                 });
@@ -68,7 +67,7 @@ namespace InmobiliariaDataLayer.Empleados
 
         public object FindForId(int id)
         {
-            var cargo = new EstadoEmpViewModels();
+            var estado = new EstadoEmpViewModels();
             string query = "SELECT id, estadoemp FROM estadoemp WHERE id = " + id;
             using (var connection = PostConnection.Connection())
             {
@@ -82,8 +81,8 @@ namespace InmobiliariaDataLayer.Empleados
                         {
                             while (reader.Read())
                             {
-                                cargo.id = Convert.ToInt16(reader["id"]);
-                                cargo.nestado = reader["estadoemp"].ToString();
+                                estado.id = Convert.ToInt16(reader["id"]);
+                                estado.nestado = reader["estadoemp"].ToString();
                             }
                         }
                     }
@@ -93,7 +92,7 @@ namespace InmobiliariaDataLayer.Empleados
                     }
                 }
             }
-            return cargo;
+            return estado;
         }
 
         public int Save(object Create)
@@ -118,7 +117,6 @@ namespace InmobiliariaDataLayer.Empleados
             int estado = -1;
 
             string query = "UPDATE estadoemp SET estadoemp = @estadoemp WHERE id = @ides";
-
 
             var datos = (EstadoEmpViewModels)data;
 

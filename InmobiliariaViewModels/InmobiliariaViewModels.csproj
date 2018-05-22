@@ -44,7 +44,9 @@
     <Compile Include="Clientes\BeneficiarioViewModels.cs" />
     <Compile Include="Clientes\ClienteInsertViewModels.cs" />
     <Compile Include="Clientes\ClienteReferenciaViewModels.cs" />
+    <Compile Include="Clientes\ClientesPagarViewModels.cs" />
     <Compile Include="Clientes\ClienteUpdateViewModels.cs" />
+    <Compile Include="Clientes\EstadoCliViewModels.cs" />
     <Compile Include="Clientes\ListaClientViewModels.cs" />
     <Compile Include="Cuotas\CalcularCuotaViewModels.cs" />
     <Compile Include="Cuotas\CuotasViewModels.cs" />
@@ -54,14 +56,24 @@
     <Compile Include="Empleados\EstadoEmpViewModels.cs" />
     <Compile Include="Empleados\ReferenciaEmpViewModels.cs" />
     <Compile Include="EstadoCuenta\PagosSelectViewModels.cs" />
-    <Compile Include="Lotes\ListaLoteViewModels.cs" />
+    <Compile Include="Lotes\EstadoLoteViewModels.cs" />
     <Compile Include="Lotes\LoteIngresoViewModels.cs" />
-    <Compile Include="Lotes\LoteUpdateViewModels.cs" />
+    <Compile Include="Lotes\ManzanaLoteViewModels.cs" />
+    <Compile Include="Lotificadora\GastosViewModels.cs" />
+    <Compile Include="Lotificadora\LotificadoraViewModels.cs" />
+    <Compile Include="Lotificadora\ViaticosViewModels.cs" />
     <Compile Include="Pagos\EstadoPagosViewModels.cs" />
+    <Compile Include="Pagos\PagosViewModels.cs" />
+    <Compile Include="Pagos\UltimoPagoViewModels.cs" />
     <Compile Include="PromocionViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestInteresViewModels.cs" />
+    <Compile Include="Venta\DescuentoViewModels.cs" />
+    <Compile Include="Venta\DetalleVentaViewModels.cs" />
+    <Compile Include="Venta\FinanVentaViewModels.cs" />
+    <Compile Include="Venta\TipoVentaViewModels.cs" />
+    <Compile Include="Venta\VentaViewModels.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

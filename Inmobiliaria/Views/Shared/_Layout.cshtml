@@ -8,6 +8,7 @@
     @*<script src="~/Scripts/modernizr-2.6.2.js"></script>*@
     <link rel="stylesheet" href="~/Content/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css"/>
     <link rel="stylesheet" href="~/Content/Style.css" />
+    <link rel="stylesheet" href="~/Content/baseline-arrow_drop_down-24px.svg" />
 </head>
 <body>
     <div class="navbar-fixed">
@@ -17,33 +18,17 @@
                     @Html.ActionLink("Inmobiliaria", "Index", "Home", new { area = "" }, new { @class = "brand-logo" })
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                        @*<li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                         <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>*@
                         @Html.Partial("_LoginPartial")
-                        <li>
-                            <a class="dropdown-trigger" href="#!" data-target="dropdown1">
-                                Empleados
-                                <i class="fas fa-caret-down"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-trigger" href="#!" data-target="dropdown2">
-                                Clientes
-                                <i class="fas fa-caret-down"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-trigger" href="#!" data-target="dropdown3">
-                                Lotes
-                                <i class="fas fa-caret-down"></i>
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </nav>
         </div>
     </div>
+
+
     <!--Desplegable Empleados-->
     <ul id="dropdown1" class="dropdown-content">
         <li><a href="@Url.Action("Index","Empleado")">Empleados</a></li>
@@ -68,22 +53,103 @@
         <li><a href="@Url.Action("Create","Beneficiario")">Agregar Beneficiario</a></li>
     </ul>
 
-    <!--Desplegable Lotes-->
+    <!--Desplegable Lotificadora-->
     <ul id="dropdown3" class="dropdown-content">
-        <li><a href="@Url.Action("Index","Lote")">Clientes</a></li>
-        <li><a href="@Url.Action("Create","Lote")">Agregar Cliente</a></li>
+        <li><a href="@Url.Action("Index","Lotificadora")">Lotificadora</a></li>
+        <li class="divider"></li>
+        <li><a href="@Url.Action("Index","Gastos")">Gastos</a></li>
+        <li><a href="@Url.Action("Create","Gastos")">Agregar Gastos</a></li>
+        <li class="divider"></li>
+        <li><a href="@Url.Action("Index","Viaticos")">Viaticos</a></li>
+        <li><a href="@Url.Action("Create","Viaticos")">Agregar Viaticos</a></li>
+    </ul>
+
+    <!--Desplegable Lotes-->
+    <ul id="dropdown4" class="dropdown-content">
+        <li><a href="@Url.Action("Index","Lote")">Lotes</a></li>
+        <li><a href="@Url.Action("Create","Lote")">Agregar Lote</a></li>
+        <li class="divider"></li>
+        <li><a href="@Url.Action("Index","ManzanaLote")">Manzana</a></li>
+        <li><a href="@Url.Action("Create","ManzanaLote")">Agregar Manzana</a></li>
+        <li class="divider"></li>
+        <li><a href="@Url.Action("Index","EstadoLote")">Estado</a></li>
+        <li><a href="@Url.Action("Create","EstadoLote")">Agregar Estado</a></li>
     </ul>
      
-    <ul class="sidenav" id="mobile-demo">
+    @*<ul class="sidenav" id="mobile-demo">
         <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
         <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
         <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
         @Html.Partial("_LoginPartial")
+    </ul>*@
+    <ul class="sidenav" id="mobile-demo">
+        @Html.Partial("_LoginSideNav")
     </ul>
 
-        <div class="container">
-            @RenderBody()
-        </div>
+    @*<ul class="sidenav" id="mobile-demo">
+        <li class="no-padding">
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">Empleados</div>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="@Url.Action("Index","Empleado")">Empleados</a></li>
+                            <li><a href="@Url.Action("Create","Empleado")">Agregar Empleado</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("Index","CargoEmp")">Cargos</a></li>
+                            <li><a href="@Url.Action("Create","CargoEmp")">Agregar Cargo</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("Index","EstadoEmp")">Estados</a></li>
+                            <li><a href="@Url.Action("Create","EstadoEmp")">Agregar Estado</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Clientes</div>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="@Url.Action("Index","Cliente")">Clientes</a></li>
+                            <li><a href="@Url.Action("Create","Cliente")">Agregar Cliente</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("Index","Referencia")">Referencias</a></li>
+                            <li><a href="@Url.Action("Create","Referencia")">Agregar Referencia</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("Index","Beneficiario")">Beneficiario</a></li>
+                            <li><a href="@Url.Action("Create","Beneficiario")">Agregar Beneficiario</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Lotificadora</div>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="@Url.Action("Index","Lotificadora")">Lotificadora</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("Index","Gastos")">Gastos</a></li>
+                            <li><a href="@Url.Action("Create","Gastos")">Agregar Gastos</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("Index","Viaticos")">Viaticos</a></li>
+                            <li><a href="@Url.Action("Create","Viaticos")">Agregar Viaticos</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Lote</div>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="@Url.Action("Index","Lote")">Lotes</a></li>
+                            <li><a href="@Url.Action("Create","Lote")">Agregar Lote</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>*@
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
 
     <!-- Inicio del Modal Para Cierre de Sesion -->
     <div id="modalLogout" class="modal">
@@ -111,6 +177,7 @@
         $(document).ready(function () {
             $('.modal').modal();
             $('.dropdown-trigger').dropdown();
+            $('.collapsible').collapsible();
         });
     </script>
     @RenderSection("scripts", required: false)

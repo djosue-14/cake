@@ -1,0 +1,41 @@
+﻿@model InmobiliariaViewModels.Lotificadora.LotificadoraViewModels
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+    <div class="input-field col s12 m12 l12">
+        <h2 class="blue-text text-darken-1">Editar Lotificadora</h2>
+        @using (Html.BeginForm("Edit", "Lotificadora", FormMethod.Post))
+        {
+            <div class="input-field col s12 m4 l5">
+                <label for="Nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" class="validate" value="@Model.nombre">
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <label for="Direccion">Direccion</label>
+                <input type="text" id="direccion" name="direccion" class="validate" value="@Model.direccion">
+            </div>        
+            <div class="input-field col s12 m4 l5">
+                <label for="Telefono">Telefono</label>
+                <input type="text" id="telefono" name="telefono" class="validate" value="@Model.telefono">
+            </div>        
+            <div class="input-field col s12 m4 l5">
+                <label for="Tasa_Interes">Tasa de Interes</label>
+                <input type="text" id="tasa_interes" name="tasa_interes" class="validate" value="@Model.tasa_interes">
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <label for="Tasa_Mora">Tasa de Mora</label>
+                <input type="text" id="tasa_mora" name="tasa_mora" class="validate" value="@Model.tasa_mora">
+            </div>
+
+            <div class="col s12 m4 l5">
+                <button type="submit" class="btn light-blue">Actualizar</button>
+            </div>
+        }
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/js/materialscript.js")
+}

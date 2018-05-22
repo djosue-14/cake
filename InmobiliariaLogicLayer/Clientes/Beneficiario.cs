@@ -30,5 +30,24 @@ namespace InmobiliariaLogicLayer.Clientes
             return persistence.Update(datos);
         }
 
+        public BeneficiarioViewModels SelectForId (int id)
+        {
+            return (BeneficiarioViewModels)persistence.FindForId(id);
+        }
+
+        public IEnumerable<BeneficiarioViewModels> BenefForCliente (int id)
+        {
+            var _beneficiario = (List<BeneficiarioViewModels>)persistence.FindAll();
+            var beneficiario = _beneficiario.Where(x => x.ClienteId == id);
+            return beneficiario;
+        }
+
+        public int Delete (int id)
+        {
+            return persistence.Delete(id);
+        }
+
+       
+
     }
 }

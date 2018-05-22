@@ -23,6 +23,8 @@ namespace InmobiliariaViewModels.Clientes
         // public int id { get; set; }
 
         //listas
+        public List<EstadoCliViewModels> estados { get; set; }
         public IEnumerable<ClienteReferenciaViewModels> referencias { get; set; }
+        public IEnumerable<BeneficiarioViewModels> beneficiario { get; set; }
     }
 }

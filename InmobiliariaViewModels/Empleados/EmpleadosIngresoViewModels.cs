@@ -25,5 +25,19 @@ namespace InmobiliariaViewModels.Empleados
 
         public List<EstadoEmpViewModels> estados { get; set; }
         public IEnumerable<ReferenciaEmpViewModels> referencias { get; set; }
+        
+    }
+
+    public class VistaEmpleadosViewModels
+    {
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public string apellido { get; set; }
+        public long dpi { get; set; }
+        public int tel { get; set; }
+        public string direccion { get; set; }
+        public string nombrecargo { get; set; }
+        public string estadoemp { get; set; }
+
     }
 }

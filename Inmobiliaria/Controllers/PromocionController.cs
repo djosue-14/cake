@@ -6,6 +6,9 @@ using System.Web.Mvc;
 using InmobiliariaLogicLayer.Lotes;
 using InmobiliariaDataLayer.Promociones;
 using InmobiliariaViewModels;
+using InmobiliariaViewModels.Lotificadora;
+using InmobiliariaLogicLayer.Lotificadora;
+using InmobiliariaDataLayer.Lotificadora;
 
 
 namespace Inmobiliaria.Controllers
@@ -15,10 +18,13 @@ namespace Inmobiliaria.Controllers
         // GET: Promocion
         public ActionResult Index()
         {
+            var promociones = new PromoViewModels();
             Promocion promo = new Promocion();
             promo._SelectAll = new DBPromocion();
+            promociones.Promociones = promo.GetAll();
 
-            var promociones = promo.GetAll();
+            Lotificadora lt = new Lotificadora(new DBLotificadora());
+            promociones.Lotificadoras = lt.SelectAll();
             return View(promociones);
         }
 
@@ -34,7 +40,10 @@ namespace Inmobiliaria.Controllers
 
         public ActionResult Save()
         {
-            return View();
+            Lotificadora lt = new Lotificadora(new DBLotificadora());
+            var promo = new PromocionViewModels();
+            promo.Lotificadoras = lt.SelectAll();
+            return View(promo);
         }
 
         [HttpPost]
@@ -48,10 +57,15 @@ namespace Inmobiliaria.Controllers
 
         public ActionResult Edit(int id)
         {
+            var model = new PromocionViewModels();
             Promocion promo = new Promocion();
             promo._SelectForId = new DBPromocion();
-            var promocion = promo.SelectForId(id);
-            return View(promocion);
+            model = promo.SelectForId(id);
+            Lotificadora lt = new Lotificadora(new DBLotificadora());
+            model.Lotificadoras = lt.SelectAll();
+            
+            //var promocion = promo.SelectForId(id);
+            return View(model);
         }
 
         [HttpPost]

@@ -1,0 +1,28 @@
+﻿@model InmobiliariaViewModels.Lotes.LoteIngresoViewModels
+@{
+    ViewBag.Title = "GetForId";
+}
+
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div class="row">
+            <h2 class="blue-text text-darken-1">Datos del Lote</h2>
+            <ul>
+                <li><b>Numero (Lote): </b><i>@Model.numero</i></li>
+                <li><b>Metros Altura : </b> <i>@Model.largo</i></li>
+                <li><b>Metros Ancho: </b><i>@Model.ancho</i></li>
+                <li><b>Metros Cuadrados: </b><i>@Model.mts_cuadrados</i></li>
+                <li><b>Precio: </b><i>@Model.precio_lote</i></li>
+                <li><b>Direccion: </b><i>@Model.estado_id</i></li>
+            </ul>
+            <div class="col s12">
+                @*     <a href="@Url.Action("Delete", "Cliente")/@Model.id" class="btn-small red"><i class="fas fa-trash"></i> Eliminar</a> *@
+                <a href="@Url.Action("Edit", "Lote")/@Model.id" class="btn-small orange"><i class="fas fa-edit"></i> Editar</a>
+                <a href="@Url.Action("Create", "ManzanaLote")/@Model.id" class="btn-small blue"><i class="fas fa-plus"></i> Agregar Manzana</a>
+                <a href="@Url.Action("Create", "Lotificadora")/@Model.id" class="btn-small blue"><i class="fas fa-plus"></i> Agregar Lotificadora</a>
+               <a href="@Url.Action("Create", "Estado")/@Model.id" class="btn-small blue"><i class="fas fa-plus"></i> Agregar Estado</a>
+            </div> 
+        </div>
+        </div>
+
+    </div>

@@ -1,0 +1,26 @@
+﻿@model InmobiliariaViewModels.Clientes.EstadoCliViewModels
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+    <div class="col s12 m12 l12">
+        <h2 class="blue-text text-darken-1">Editar Estado</h2>
+        @using (Html.BeginForm("Edit", "EstadoCli", FormMethod.Post))
+        {
+            <div class="input-field col s12 m4 l5">
+                <label for="Nombre">Nombre</label>
+                <input type="text" id="estado" name="estado" class="validate" value="@Model.estado">
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <button type="submit" class="btn light-blue">Actualizar</button>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/js/materialscript.js")
+}

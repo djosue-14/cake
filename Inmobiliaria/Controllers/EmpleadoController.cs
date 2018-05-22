@@ -67,7 +67,8 @@ namespace Inmobiliaria.Controllers
             return RedirectToAction("Index", "Empleado");
         }
 
-        public ActionResult Edit(int id) {
+        public ActionResult Edit(int id)
+        {
             DBEmpleados dbEmpleados = new DBEmpleados();
             Empleados emp = new Empleados(dbEmpleados);
             DBCargoEmp dbcargo = new DBCargoEmp();
@@ -85,7 +86,8 @@ namespace Inmobiliaria.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(EmpleadosIngresoViewModels datos) {
+        public ActionResult Edit(EmpleadosIngresoViewModels datos)
+        {
             DBEmpleados dbEmpleados = new DBEmpleados();
             Empleados emp = new Empleados(dbEmpleados);
             emp.Update(datos);

@@ -39,7 +39,7 @@ namespace InmobiliariaDataLayer.Clientes
         public int Update (object data)
         {
             int estado = 1;
-            string query = "update referencia set nombre = @nombre, apellido = @apellido, telefono = @telefono, direccion = @direccion, id_cliente = @cliente" +
+            string query = "UPDATE referencia set nombre = @nombre, apellido = @apellido, telefono = @telefono, direccion = @direccion, id_cliente = @id_cliente " +
                 "where id = @id";
 
           //  update referencia set nombre = 'Jose', apellido = 'Medina', telefono = '788547', direccion = 'la Blanca', id_cliente = '1'
@@ -61,7 +61,7 @@ namespace InmobiliariaDataLayer.Clientes
         public object FindAll()
         {
             var lista = new List<ClienteReferenciaViewModels>();
-            string query = "select nombre, apellido, telefono, direccion, id_cliente from referencia ";
+            string query = "select id, nombre, apellido, telefono, direccion, id_cliente from referencia ";
 
             using (var conection = PostConnection.Connection())
             {
@@ -76,7 +76,7 @@ namespace InmobiliariaDataLayer.Clientes
                             {
                                 lista.Add(new ClienteReferenciaViewModels()
                                 {
-                                   // id= Convert.ToInt32(reader["id"]),
+                                    Id= Convert.ToInt32(reader["id"]),
                                     Nombre = reader["nombre"].ToString(),
                                     Apellido = reader["apellido"].ToString(),
                                     Telefono = reader["telefono"].ToString(),
@@ -104,6 +104,7 @@ namespace InmobiliariaDataLayer.Clientes
             string query = "DELETE FROM referencia where id = @Id";
 
             var command = db.Command(query);
+            command.Parameters.AddWithValue("@Id", id);
             estado = db.Command(command);
             return estado;
 
@@ -112,7 +113,40 @@ namespace InmobiliariaDataLayer.Clientes
 
         public object FindForId(int id)
         {
-            throw new NotImplementedException();
+            var reff = new ClienteReferenciaViewModels();
+            string query = "select id, nombre, apellido, telefono, direccion, id_cliente from referencia where id=@id";
+            using (var connection = PostConnection.Connection())
+            {
+                using (var command = db.Command(query))
+                {
+                    try
+                    {
+                        connection.Open();
+                        command.Connection = connection;
+                        command.Parameters.AddWithValue("@id",id);
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                reff.Id = Convert.ToInt32(reader["id"]);
+                                reff.Nombre = Convert.ToString(reader["nombre"]);
+                                reff.Apellido = Convert.ToString(reader["apellido"]);
+                                reff.Telefono = Convert.ToString(reader["telefono"]);
+                                reff.Direccion = Convert.ToString(reader["direccion"]);
+                                reff.ClienteId = Convert.ToInt32(reader["id_cliente"]);
+
+
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+            return reff;
+            //asfsdf
         }
     }
 }

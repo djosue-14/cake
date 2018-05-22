@@ -55,8 +55,21 @@
             </div>
 
             <div class="input-field col s12 m4 l5">
+                <select name="estado" id="estado">
+                    @foreach (var s in Model.estados)
+                    {
+                        if (s.id == Model.estado)
+                        {
+                            <option value="@s.id" selected>@s.estado</option>
+
+                        }
+                        else
+                        {
+                            <option value="@s.id">@s.estado</option>
+                        }
+                    }
+                </select>
                 <label for="estado">Estado</label>
-                <input type="text" name="estado" id="estado" class="validate" value="@Model.estado" />
             </div>
 
             <div class="input-field col s12 m4 l5">

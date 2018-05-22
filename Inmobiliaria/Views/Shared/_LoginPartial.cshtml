@@ -1,6 +1,30 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
+    <li>
+        <a class="dropdown-trigger" href="#!" data-target="dropdown1">
+            Empleados
+            <i class="fas fa-sort-down"></i>
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-trigger" href="#!" data-target="dropdown2">
+            Clientes
+            <i class="fas fa-sort-down"></i>
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-trigger" href="#!" data-target="dropdown3">
+                Lotificadora
+            <i class="fas fa-sort-down"></i>
+        </a>
+    </li>
+    <li>
+        <a class="dropdown-trigger" href="#!" data-target="dropdown4">
+            Lotes
+            <i class="fas fa-sort-down"></i>
+        </a>
+    </li>
     <li><a class="modal-trigger" href="#modalLogout">Salir</a></li>
 }
 else

@@ -12,12 +12,13 @@
             <thead>
                 <tr>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
                     <th scope="col">Dpi</th>
                     <th scope="col">Direccion</th>
                     <th scope="col">Telefono</th>
+                    <th scope="col">Fecha Nacimiento</th>
                     <th scope="col">Sexo</th>
-                    <th scope="col">Fecha Nac</th>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Estado</th>
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
@@ -25,14 +26,45 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td scope="col">@item.nombre_e</td>
-                        <td scope="col">@item.apellido_e</td>
+                        <td scope="col">@item.nombre_e @item.apellido_e</td>
                         <td scope="col">@item.dpi_e</td>
                         <td scope="col">@item.dire_e</td>
                         <td scope="col">@item.tel_e</td>
-                        <td scope="col">@item.sexo_e</td>
                         <td scope="col">@item.fecha_nac_e.ToString("dd/MM/yyyy")</td>
+                        @if (item.sexo_e == 1)
+                        {
+                            <td scope="col">Masculino</td>
+                        }
+                        else
+                        {
+                            <td scope="col">Femenino</td>
+                        }
 
+                        @if (item.cargo_e == 1)
+                        {
+                            <td scope="col">Asesor de Venta</td>
+                        }
+                        else if (item.cargo_e == 2)
+                        {
+                            <td scope="col">Coordinador</td>
+                        }
+                        else
+                        {
+                            <td scope="col">Secretaria</td>
+                        }
+
+                        @if (item.estado_e == 1)
+                        {
+                            <td scope="col">Activo</td>
+                        }
+                        else if (item.estado_e == 2)
+                        {
+                            <td scope="col">Despedido</td>
+                        }
+                        else
+                        {
+                            <td scope="col">Suspendido</td>
+                        }
                         <td>
                             <a href="@Url.Action("GetForId", "Empleado")/@item.id" class="btn-small green"><i class="fas fa-eye"></i> Ver</a>
                         </td>

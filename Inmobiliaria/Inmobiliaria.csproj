@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework6.Npgsql, Version=3.1.1.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework6.Npgsql.3.1.1\lib\net45\EntityFramework6.Npgsql.dll</HintPath>
       <Private>True</Private>
@@ -182,14 +185,37 @@
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\CuotaController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
+    <Compile Include="Controllers\EstadoCliController.cs" />
     <Compile Include="Controllers\EstadoCuentaController.cs" />
     <Compile Include="Controllers\EstadoEmpController.cs" />
+    <Compile Include="Controllers\EstadoLoteController.cs" />
+    <Compile Include="Controllers\GastosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoteController.cs" />
+    <Compile Include="Controllers\LotificadoraController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManzanaLoteController.cs" />
+    <Compile Include="Controllers\PagosController.cs" />
     <Compile Include="Controllers\PromocionController.cs" />
     <Compile Include="Controllers\ReferenciaController.cs" />
     <Compile Include="Controllers\ReferenciaEmpController.cs" />
+    <Compile Include="Controllers\VentaController.cs" />
+    <Compile Include="Controllers\ViaticosController.cs" />
+    <Compile Include="DataSets\Cuotas\DSCuotaPorFinanciamiento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSCuotaPorFinanciamiento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\Cuotas\DSCuotaPorMes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSCuotaPorMes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\EstadoCuenta\DSEstadoPagos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEstadoPagos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,6 +223,25 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\CreateReport.cs" />
+    <Compile Include="Reports\Cuotas\CuotaPorFinanciamietoReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CuotaPorFinanciamietoReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Cuotas\CuotaPorMesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CuotaPorMesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EstadoCuenta\EstadoPagosReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadoPagosReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -309,6 +354,39 @@
     <Content Include="Content\fontawesome\web-fonts-with-css\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\fontawesome\web-fonts-with-css\webfonts\fa-solid-900.woff" />
     <Content Include="Content\fontawesome\web-fonts-with-css\webfonts\fa-solid-900.woff2" />
+    <Content Include="DataSets\Cuotas\DSCuotaPorFinanciamiento.xsc">
+      <DependentUpon>DSCuotaPorFinanciamiento.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSets\Cuotas\DSCuotaPorFinanciamiento.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSCuotaPorFinanciamiento.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSets\Cuotas\DSCuotaPorFinanciamiento.xss">
+      <DependentUpon>DSCuotaPorFinanciamiento.xsd</DependentUpon>
+    </Content>
+    <Content Include="DataSets\Cuotas\DSCuotaPorMes.xsc">
+      <DependentUpon>DSCuotaPorMes.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSets\Cuotas\DSCuotaPorMes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSCuotaPorMes.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSets\Cuotas\DSCuotaPorMes.xss">
+      <DependentUpon>DSCuotaPorMes.xsd</DependentUpon>
+    </Content>
+    <Content Include="DataSets\EstadoCuenta\DSEstadoPagos.xsc">
+      <DependentUpon>DSEstadoPagos.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSets\EstadoCuenta\DSEstadoPagos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEstadoPagos.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSets\EstadoCuenta\DSEstadoPagos.xss">
+      <DependentUpon>DSEstadoPagos.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -391,6 +469,35 @@
     <Content Include="Views\Lote\Index.cshtml" />
     <Content Include="Views\Referencia\Create.cshtml" />
     <Content Include="Views\Referencia\Index.cshtml" />
+    <Content Include="Views\EstadoCuenta\ShowEstadoPagos.cshtml" />
+    <Content Include="Views\Gastos\Create.cshtml" />
+    <Content Include="Views\Gastos\Edit.cshtml" />
+    <Content Include="Views\Gastos\Index.cshtml" />
+    <Content Include="Views\Lotificadora\Create.cshtml" />
+    <Content Include="Views\Lotificadora\Edit.cshtml" />
+    <Content Include="Views\Lotificadora\Index.cshtml" />
+    <Content Include="Views\Viaticos\Create.cshtml" />
+    <Content Include="Views\Viaticos\Edit.cshtml" />
+    <Content Include="Views\Viaticos\Index.cshtml" />
+    <Content Include="Views\Beneficiario\Edit.cshtml" />
+    <Content Include="Views\Lote\Edit.cshtml" />
+    <Content Include="Views\Lote\FindLoti.cshtml" />
+    <Content Include="Views\Lote\GetForId.cshtml" />
+    <Content Include="Views\EstadoLote\Create.cshtml" />
+    <Content Include="Views\EstadoLote\Edit.cshtml" />
+    <Content Include="Views\EstadoLote\Index.cshtml" />
+    <Content Include="Views\ManzanaLote\Create.cshtml" />
+    <Content Include="Views\ManzanaLote\Edit.cshtml" />
+    <Content Include="Views\ManzanaLote\Index.cshtml" />
+    <Content Include="Views\Venta\IdCliente.cshtml" />
+    <Content Include="Views\Venta\IdLote.cshtml" />
+    <Content Include="Views\Venta\CuotasVenta.cshtml" />
+    <Content Include="Views\Venta\CalcularVenta.cshtml" />
+    <Content Include="Views\EstadoCli\Index.cshtml" />
+    <Content Include="Views\EstadoCli\Create.cshtml" />
+    <Content Include="Views\EstadoCli\Edit.cshtml" />
+    <Content Include="Views\Pagos\Pagar.cshtml" />
+    <Content Include="Views\Pagos\VentaCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -416,6 +523,23 @@
       <Project>{a5508aca-f5f8-4f3e-a49a-c532a0a0e51d}</Project>
       <Name>InmobiliariaViewModels</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\Cuotas\CuotaPorFinanciamietoReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CuotaPorFinanciamietoReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Cuotas\CuotaPorMesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CuotaPorMesReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EstadoCuenta\EstadoPagosReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstadoPagosReport.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,49 @@
+﻿ @model InmobiliariaViewModels.Lotificadora.ViaticosViewModels
+@{
+    ViewBag.Title = "Create";
+}
+<div class="row">
+    <div class="col s12 m12 l12">
+        <h2 class="blue-text text-darken-1">Ingresar Viaticos</h2>
+        @using (Html.BeginForm("Create", "Viaticos", FormMethod.Post))
+        {
+            <div class="input-field col s12 m4 l5">
+                <label for="Fecha">Fecha:</label>
+                <input type="text" id="fecha" name="fecha" class="datepicker">
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <label for="Cantidad">Cantidad</label>
+                <input type="text" id="cantidad" name="cantidad" class="validate">
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <label for="Descripcion">Descripcion</label>
+                <input type="text" id="descripcion" name="descripcion" class="validate">
+            </div>
+                <div class="input-field col s12 m4 l5">
+                    <select name="lotificadora_id" id="lotificadora_id">
+                        @foreach (var c in Model.lotificadoras)
+                        {
+                            <option value="@c.id">@c.nombre</option>
+                        }
+                    </select>
+                    <label for="Lotificadora_id">Lotificadora</label>
+                </div>
+                <div class="input-field col s12 m4 l5">
+                    <select name="empleado_id" id="empleado_id">
+                        @foreach (var c in Model.empleados)
+                        {
+                            <option value="@c.id">@c.nombre_e @c.apellido_e</option>
+                        }
+                    </select>
+                    <label for="Empleado_id">Empleado</label>
+                </div>
+                <div class="col s12 m4 l5">
+                    <button type="submit" class="btn light-blue"><i class="fas fa-save"></i> Guardar</button>
+                </div>
+        }
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/js/materialscript.js")
+}

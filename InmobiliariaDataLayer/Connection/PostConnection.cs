@@ -30,13 +30,13 @@ namespace InmobiliariaDataLayer.Connection
             int estado = -1;
             using (var connection = Connection())
             {
-                try
-                {
+                //try
+                //{
                     connection.Open();
                     command.Connection = connection;
                     estado = command.ExecuteNonQuery();
                     //Console.WriteLine("Sentencia Sql Ejecutada Con Exito");
-                }
+                /*}
                 catch (NpgsqlException ex)
                 {
                     Console.WriteLine(ex.Message);
@@ -44,7 +44,7 @@ namespace InmobiliariaDataLayer.Connection
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                }
+                }*/
             }
             return estado;
         }

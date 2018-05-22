@@ -1,0 +1,42 @@
+﻿@model List<InmobiliariaViewModels.Lotificadora.LotificadoraViewModels>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div class="page-header">
+            <h4 id="tables" class="text-center blue-text text-darken-1">Tabla de Lotificadoras</h4>
+        </div>
+        <table class="striped responsive-table text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Tasa de Interes</th>
+                    <th scope="col">Tasa de Mora</th>
+                    <th scope="col">Acciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td scope="col">@item.nombre </td>
+                        <td scope="col">@item.direccion</td>
+                        <td scope="col">@item.telefono</td>
+                        <td scope="col">@item.tasa_interes %</td>
+                        <td scope="col">@item.tasa_mora %</td>
+
+                        <td>
+                            <a href="@Url.Action("Delete", "Lotificadora")/@item.id" class="btn-small red"><i class="fas fa-trash"></i> Eliminar</a>
+                            <a href="@Url.Action("Edit", "Lotificadora")/@item.id" class="btn-small orange"><i class="fas fa-edit"></i> Modificar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InmobiliariaViewModels.Lotificadora;
 
 namespace InmobiliariaViewModels
 {
@@ -14,5 +15,13 @@ namespace InmobiliariaViewModels
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
         public int LotificadoraId { get; set; }
+
+        public List<LotificadoraViewModels> Lotificadoras { get; set; }
+    }
+
+    public class PromoViewModels
+    {
+        public List<PromocionViewModels> Promociones { get; set; }
+        public List<LotificadoraViewModels> Lotificadoras { get; set; }
     }
 }

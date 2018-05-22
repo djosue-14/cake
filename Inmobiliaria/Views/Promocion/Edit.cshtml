@@ -46,6 +46,25 @@
                 </div>
             </div>
             <div class="row">
+                <div class="input-field col s12">
+                    <select name="LotificadoraId" id="LotificadoraId">
+                        @foreach (var item in Model.Lotificadoras)
+                        {
+                            if (Model.LotificadoraId == @item.id)
+                            {
+                                <option value="@item.id" selected>@item.nombre</option>
+                            }
+                            else
+                            {
+                                <option value="@item.id">@item.nombre</option>
+                            }
+
+                        }
+                    </select>
+                    <label for="LotificadoraId"></label>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col s12">
                     <input type="submit" class="btn light-blue accent-3" value="Guardar"/>
                 </div>

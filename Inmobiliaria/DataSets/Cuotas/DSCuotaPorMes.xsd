@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSCuotaPorMes" targetNamespace="http://tempuri.org/DSCuotaPorMes.xsd" xmlns:mstns="http://tempuri.org/DSCuotaPorMes.xsd" xmlns="http://tempuri.org/DSCuotaPorMes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSCuotaPorMes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSCuotaPorMes" msprop:Generator_UserDSName="DSCuotaPorMes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CuotasPorMes" msprop:Generator_TableClassName="CuotasPorMesDataTable" msprop:Generator_TableVarName="tableCuotasPorMes" msprop:Generator_TablePropName="CuotasPorMes" msprop:Generator_RowDeletingName="CuotasPorMesRowDeleting" msprop:Generator_RowChangingName="CuotasPorMesRowChanging" msprop:Generator_RowEvHandlerName="CuotasPorMesRowChangeEventHandler" msprop:Generator_RowDeletedName="CuotasPorMesRowDeleted" msprop:Generator_UserTableName="CuotasPorMes" msprop:Generator_RowChangedName="CuotasPorMesRowChanged" msprop:Generator_RowEvArgName="CuotasPorMesRowChangeEvent" msprop:Generator_RowClassName="CuotasPorMesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CuotaSinInteres" msprop:Generator_ColumnVarNameInTable="columnCuotaSinInteres" msprop:Generator_ColumnPropNameInRow="CuotaSinInteres" msprop:Generator_ColumnPropNameInTable="CuotaSinInteresColumn" msprop:Generator_UserColumnName="CuotaSinInteres" type="xs:string" minOccurs="0" />
+              <xs:element name="InteresPorMes" msprop:Generator_ColumnVarNameInTable="columnInteresPorMes" msprop:Generator_ColumnPropNameInRow="InteresPorMes" msprop:Generator_ColumnPropNameInTable="InteresPorMesColumn" msprop:Generator_UserColumnName="InteresPorMes" type="xs:string" minOccurs="0" />
+              <xs:element name="CuotaConInteres" msprop:Generator_ColumnVarNameInTable="columnCuotaConInteres" msprop:Generator_ColumnPropNameInRow="CuotaConInteres" msprop:Generator_ColumnPropNameInTable="CuotaConInteresColumn" msprop:Generator_UserColumnName="CuotaConInteres" type="xs:string" minOccurs="0" />
+              <xs:element name="SaldoPrecioSinInteres" msprop:Generator_ColumnVarNameInTable="columnSaldoPrecioSinInteres" msprop:Generator_ColumnPropNameInRow="SaldoPrecioSinInteres" msprop:Generator_ColumnPropNameInTable="SaldoPrecioSinInteresColumn" msprop:Generator_UserColumnName="SaldoPrecioSinInteres" type="xs:string" minOccurs="0" />
+              <xs:element name="SaldoInteresTotal" msprop:Generator_ColumnVarNameInTable="columnSaldoInteresTotal" msprop:Generator_ColumnPropNameInRow="SaldoInteresTotal" msprop:Generator_ColumnPropNameInTable="SaldoInteresTotalColumn" msprop:Generator_UserColumnName="SaldoInteresTotal" type="xs:string" minOccurs="0" />
+              <xs:element name="SaldoPrecioConInteres" msprop:Generator_ColumnVarNameInTable="columnSaldoPrecioConInteres" msprop:Generator_ColumnPropNameInRow="SaldoPrecioConInteres" msprop:Generator_ColumnPropNameInTable="SaldoPrecioConInteresColumn" msprop:Generator_UserColumnName="SaldoPrecioConInteres" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

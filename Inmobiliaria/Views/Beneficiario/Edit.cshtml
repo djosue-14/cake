@@ -1,0 +1,71 @@
+﻿@model InmobiliariaViewModels.Clientes.BeneficiarioViewModels
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+    <div class="col s12 m12 l12">
+        <h4 class="text-center blue-text text-darken-1">Editar Beneficiario</h4>
+        @using (Html.BeginForm("Edit", "Beneficiario", FormMethod.Post))
+    {
+        <div class="input-field col s12 m4 l5">
+            <label for="Nombre">Nombre</label>
+            <input type="text" name="Nombre" id="Nombre" class="validate" value="@Model.Nombre" />
+        </div>
+
+        <div class="input-field col s12 m4 l5">
+            <label for="Apellido">Apellido</label>
+            <input type="text" name="Apellido" id="Apellido" class="validate" value="@Model.Apellido" />
+        </div>
+
+        <div class="input-field col s12 m4 l5">
+            <label for="Dpi">Dpi</label>
+            <input type="text" name="Dpi" id="Dpi" class="validate" value="@Model.Dpi" />
+        </div>
+
+        <div class="input-field col s12 m4 l5">
+            <label for="Telefono">Telefono</label>
+            <input type="text" name="Telefono" id="Telefono" class="validate" value="@Model.Telefono" />
+        </div>
+
+
+        <div class="input-field col s12 m4 l5">
+            <label for="Direccion">Direccion</label>
+            <input type="text" name="Direccion" id="Direccion" class="validate" value="@Model.Direccion" />
+        </div>
+
+        <div class="input-field col s12 m4 l5">
+            <select class="form-control" name="Sexo">
+                @if (Model.Sexo == "M")
+            {
+                <option value="M" selected>Masculino</option>
+                <option value="F">Femenino</option>
+        }
+        else
+        {
+            <option value="M">Masculino</option>
+            <option value="F" selected>Femenino</option>
+    }
+            </select>
+            <label for="Sexo">Sexo</label>
+        </div>
+
+        <div class="input-field col s12 m4 l5">
+            <label for="direccion">Cliente</label>
+            <input type="text" name="ClienteId" id="ClienteId" class="validate" value="@Model.ClienteId" />
+        </div>
+
+ 
+
+        <div class="input-field col s12 m4 l5">
+            <button type="submit" class="btn light-blue">Guardar</button>
+        </div>
+}
+
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/js/materialscript.js")
+}

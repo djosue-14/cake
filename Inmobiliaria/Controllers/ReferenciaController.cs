@@ -20,6 +20,12 @@ namespace Inmobiliaria.Controllers
             return View(lista);
         }
 
+        public ActionResult EnviarId(int Id)
+        {
+            TempData["ClienteId"] = Id;
+            return RedirectToAction("Create", "Referencia");
+            
+        }
         public ActionResult Create()
         {
             ViewBag.Title = "Ingresar Referencia";
@@ -32,10 +38,38 @@ namespace Inmobiliaria.Controllers
             ViewBag.Title = "Ingresar Referencia";
             DBReferencia dbreferencia = new DBReferencia();
             Referencia referencia = new Referencia(dbreferencia);
+            datos.ClienteId = Convert.ToInt32(TempData["ClienteId"]);
             referencia.Save(datos);
 
 
-            return RedirectToAction("Index", "Referencia");
+            return RedirectToAction("Index", "Cliente");
         }
+
+        public ActionResult Edit (int id)
+        {
+            DBReferencia dbreferencia = new DBReferencia();
+            Referencia referencia = new Referencia(dbreferencia);
+            var reff = referencia.SelectForId(id);
+            return View(reff);
+
+        }
+
+        [HttpPost]
+        public ActionResult Edit (ClienteReferenciaViewModels datos)
+        {
+            DBReferencia dbreferencia = new DBReferencia();
+            Referencia referencia = new Referencia(dbreferencia);
+            referencia.Update(datos);
+            return RedirectToAction("Index", "Cliente");
+        }
+
+        public ActionResult Delete (int id)
+        {
+            DBReferencia dbreferencia = new DBReferencia();
+            Referencia referencia = new Referencia(dbreferencia);
+            referencia.Delete(id);
+            return RedirectToAction("Index", "Cliente");
+        }
+
     }
 }

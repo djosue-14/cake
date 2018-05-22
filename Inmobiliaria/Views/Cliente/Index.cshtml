@@ -11,7 +11,6 @@
             <thead>
                 <tr>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
                     <th scope="col">Dpi</th>
                     <th scope="col">Telefono</th>
                     <th scope="col">Direccion</th>
@@ -24,8 +23,7 @@
                 {
                     <tr>
 
-                        <td scope="col">@item.nombre </td>
-                        <td scope="col">@item.apellido </td>
+                        <td scope="col">@item.nombre @item.apellido</td>
                         <td scope="col">@item.dpi </td>
                         <td scope="col">@item.telefono </td>
                         <td scope="col">@item.direccion </td>
@@ -38,7 +36,9 @@
                             <td scope="col">Inactivo</td>
                         }
                         <td scope="col">
-                            <a href="@Url.Action("GetForId", "Cliente")/@item.id"><i class="fas fa-eye"></i> Ver</a>
+                            <a href="@Url.Action("GetForId", "Cliente")/@item.id" class="btn-small green"><i class="fas fa-eye"></i> Ver</a>
+                            <a href="@Url.Action("IdCliente", "Venta")/@item.id" class="btn-small black"><i class="fas fa-eye"></i> Asignar Venta</a>
+                            <a href="@Url.Action("VentaCliente", "Pagos")/@item.id" class="btn-small black"><i class="fas fa-eye"></i> Pagar Cuota</a>
                         </td>
 
                     </tr>

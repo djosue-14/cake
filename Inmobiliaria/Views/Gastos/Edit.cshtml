@@ -1,0 +1,63 @@
+﻿@model InmobiliariaViewModels.Lotificadora.GastosViewModels
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+    <div class="col s12 m12 l12">
+        <h2 class="blue-text text-darken-1">Editar Gastos</h2>
+        @using (Html.BeginForm("Edit","Gastos", FormMethod.Post))
+        {
+            <div class="input-field col s12 m4 l5">
+                <label for="cantidad">Cantidad</label>
+                <input type="text" id="cantidad" name="cantidad" class="validate" value="@Model.cantidad">
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <label for="descripcion">Descripcion</label>
+                <input type="text" id="descripcion" name="descripcion" class="validate" value="@Model.descripcion">
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <select name="lotificadora_id" id="lotificadora_id">
+                    @foreach (var l in Model.lotificadoras)
+                    {
+                        if (l.id == Model.lotificadora_id)
+                        {
+                            <option value="@l.id" selected>@l.nombre</option>
+
+                        }
+                        else
+                        {
+                            <option value="@l.id">@l.nombre</option>
+                        }
+                    }
+                </select>
+                <label for="Lotificadora_id">Lotificadora</label>
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <select name="empleado_id" id="empleado_id">
+                    @foreach (var e in Model.empleados)
+                    {
+                        if (e.id == Model.empleado_id)
+                        {
+                            <option value="@e.id" selected>@e.nombre_e @e.apellido_e</option>
+
+                        }
+                        else
+                        {
+                            <option value="@e.id">@e.nombre_e @e.apellido_e</option>
+                        }
+                    }
+                </select>
+                <label for="Empleado_id">Empleado</label>
+            </div>
+            <div class="col s12 m4 l5">
+                <button type="submit" class="btn light-blue">Actualizar</button>
+            </div>
+           }
+        </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/js/materialscript.js")
+}

@@ -1,0 +1,32 @@
+﻿@model InmobiliariaViewModels.Venta.VentaViewModels
+
+
+<h3>@Model.Cliente.nombre</h3>
+<h3>@Model.Cliente.apellido</h3>
+<h3>@Model.Cliente.direccion</h3>
+<hr />
+
+
+
+@using (Html.BeginForm("IdLote", "Venta", FormMethod.Post))
+{
+    <input type="hidden" name="ClienteId" id="ClienteId" value="@Model.Cliente.id"/>
+    <div class="input-field col s12 m4 l5">
+        <select name="EmpVentaId" id="EmpVentaId">
+            <option value="" disabled selected>Elige tu opcion</option>
+            @foreach (var item in Model.Empleados)
+            {
+                <option value="@item.id">@item.nombre_e @item.apellido_e</option>
+            }
+        </select>
+        <label for="EmpVentaId">Empleado</label>
+    </div>
+    <div class="input-field col s12 m4 l5">
+        <input type="submit" class="btn light-blue" value="Next"/>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/js/materialscript.js")
+}

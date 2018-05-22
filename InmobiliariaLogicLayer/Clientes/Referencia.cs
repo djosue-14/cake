@@ -38,5 +38,14 @@ namespace InmobiliariaLogicLayer.Clientes
             var referencias = _referencias.Where(x => x.ClienteId == id);
             return referencias;
         }
+
+        public ClienteReferenciaViewModels SelectForId (int id)
+        {
+            return (ClienteReferenciaViewModels)persistence.FindForId(id);
+        }
+        public int Delete (int id)
+        {
+            return persistence.Delete(id);
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace InmobiliariaDataLayer.Empleados
         public object FindAll()
         {
             var lista = new List<CargoEmpViewModels>();
-            string query = "SELECT id, nombrecargo FROM cargo";
+            string query = "SELECT id, nombrecargo, sueldo FROM cargo";
             using (var connection = PostConnection.Connection())
             {
                 using (var command = db.Command(query))
@@ -39,7 +39,8 @@ namespace InmobiliariaDataLayer.Empleados
                                 {
 
                                     id = Convert.ToInt16(reader["id"]),
-                                    nombrecargo = reader["nombrecargo"].ToString(),                                   
+                                    nombrecargo = reader["nombrecargo"].ToString(),
+                                    sueldo = Convert.ToDouble(reader["sueldo"]),
                                 });
                             }
                         }
@@ -70,7 +71,7 @@ namespace InmobiliariaDataLayer.Empleados
         public object FindForId(int id)
         {
             var cargo = new CargoEmpViewModels();
-            string query = "SELECT id, nombrecargo FROM cargo WHERE id = " + id;
+            string query = "SELECT id, nombrecargo, sueldo FROM cargo WHERE id = " + id;
             using (var connection = PostConnection.Connection())
             {
                 using (var command = db.Command(query))
@@ -85,6 +86,7 @@ namespace InmobiliariaDataLayer.Empleados
                             {
                                 cargo.id = Convert.ToInt16(reader["id"]);
                                 cargo.nombrecargo = reader["nombrecargo"].ToString();
+                                cargo.sueldo = Convert.ToDouble(reader["sueldo"]);
                             }
                         }
                     }
@@ -104,10 +106,11 @@ namespace InmobiliariaDataLayer.Empleados
             var datos = (CargoEmpViewModels)Create;
 
             //insertar cargo
-            string query = "INSERT INTO cargo (nombrecargo) VALUES (@nombrecar)";
+            string query = "INSERT INTO cargo (nombrecargo, sueldo) VALUES (@nombrecar, @sueldo)";
 
             var command = db.Command(query);
             command.Parameters.AddWithValue("@nombrecar", datos.nombrecargo);
+            command.Parameters.AddWithValue("@sueldo", datos.sueldo);
 
             estado = db.Command(command);
 
@@ -118,7 +121,7 @@ namespace InmobiliariaDataLayer.Empleados
         {
             int estado = -1;
 
-            string query = "UPDATE cargo SET nombrecargo = @nombrecar WHERE id = @idcar";
+            string query = "UPDATE cargo SET nombrecargo = @nombrecar, sueldo = @sueldo WHERE id = @idcar";
 
 
             var datos = (CargoEmpViewModels)data;
@@ -126,6 +129,7 @@ namespace InmobiliariaDataLayer.Empleados
             var command = db.Command(query);
             command.Parameters.AddWithValue("@idcar", datos.id);
             command.Parameters.AddWithValue("@nombrecar", datos.nombrecargo);
+            command.Parameters.AddWithValue("@sueldo", datos.sueldo);
 
             estado = db.Command(command);
 

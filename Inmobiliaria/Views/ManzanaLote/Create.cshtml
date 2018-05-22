@@ -1,0 +1,20 @@
+﻿@model InmobiliariaViewModels.Lotes.ManzanaLoteViewModels
+@{
+    ViewBag.Title = "Create";
+}
+<div class="row">
+    <div class="col s12 m12 l12">
+        <h2 class="blue-text text-darken-1">Ingresar Manzana</h2>
+        @using (Html.BeginForm("Create", "ManzanaLote", FormMethod.Post))
+        {
+            <div class="input-field col s12 m4 l5">
+                <label for="manzana">Manzana</label>
+                <input type="text" name="manzana" id="manzana" class="validate" />
+            </div>
+
+            <div class="col s12 m4 l5">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i>Guardar</button>
+            </div>
+        }
+    </div>
+</div>

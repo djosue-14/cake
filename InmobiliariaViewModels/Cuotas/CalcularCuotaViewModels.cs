@@ -13,4 +13,14 @@ namespace InmobiliariaViewModels.Cuotas
         public int tiempo { get; set; }
         public double enganche { get; set; }
     }
+
+    public class CuotaVentaViewModels
+    {
+        public double cantidad { get; set; }
+        public double interes { get; set; }
+        public int tiempo { get; set; }
+        public double enganche { get; set; }
+        public double descuento { get; set; }
+        public double cuota { get; set; }
+    }
 }

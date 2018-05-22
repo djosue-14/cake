@@ -37,7 +37,9 @@ namespace InmobiliariaLogicLayer.Clientes
             return persistence.Update(datos);
         }
 
-
-        
+        public int Delete (int id)
+        {
+            return persistence.Delete(id);
+        }       
     }
 }

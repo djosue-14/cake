@@ -32,29 +32,41 @@
                 <label for="precio_lote">Precio</label>
                 <input type="text" name="precio_lote" class="validate" id="precio_lote" />
             </div>
-
             <div class="input-field col s12 m4 l5">
+                <select name="manzana_id" id="manzana_id">
+                    @foreach (var c in Model.manzanas)
+                    {
+                        <option value="@c.id">@c.manzana</option>
+                    }
+                </select>
                 <label for="manzana_id">Manzana</label>
-                <input type="text" name="manzana_id" class="validate" id="manzana_id" />
             </div>
-
             <div class="input-field col s12 m4 l5">
+                <select name="lotificadora_id" id="lotificadora_id">
+                    @foreach (var c in Model.lotificadoras)
+                    {
+                        <option value="@c.id">@c.nombre</option>
+                    }
+                </select>
                 <label for="lotificadora_id">Lotificadora</label>
-                <input type="text" name="lotificadora_id" class="validate" id="lotificadora_id" />
             </div>
-
             <div class="input-field col s12 m4 l5">
                 <select name="estado_id" id="estado_id">
-                    <option value='1'>Disponible</option>
-                    <option value='2'>Reservado</option>
-                    <option value='3'>Vendido</option>
+                    @foreach (var c in Model.estados)
+                    {
+                        <option value="@c.id">@c.estado</option>
+                    }
                 </select>
-                <label for="estado_id">estado_id</label>
+                <label for="estado_id">Estado</label>
             </div>
-
             <div class="col s12 m4 l5">
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="submit" class="btn light-blue"><i class="fas fa-save"></i>Guardar</button>
             </div>
         }
     </div>
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/js/materialscript.js")
+}

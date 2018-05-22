@@ -1,4 +1,4 @@
-﻿
+﻿@model InmobiliariaViewModels.PromocionViewModels
 @{
     ViewBag.Title = "Agregar Promocion";
 }
@@ -29,6 +29,17 @@
                 <div class="input-field col s12">
                     <input type="text" class="datepicker" id="FechaFin" name="FechaFin"/>
                     <label for="FechaFin">Fecha de Finalizacion</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select name="LotificadoraId" id="LotificadoraId">
+                        @foreach (var item in Model.Lotificadoras)
+                        {
+                            <option value="@item.id">@item.nombre</option>
+                        }
+                    </select>
+                    <label for="LotificadoraId"></label>
                 </div>
             </div>
             <div class="row">

@@ -28,20 +28,20 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td scope="col">@item.saldo_anterior</td>
-                                <td scope="col">@item.saldo_actual</td>
-                                <td scope="col">@item.monto_pago</td>
-                                <td scope="col">@item.fecha_pagar.ToString("yyyy-MM-dd")</td>
-                                @if (@item.fecha_cancelada.ToString("yyyy-MM-dd") == "0001-01-01")
+                                <td scope="col">@item.SaldoAnterior</td>
+                                <td scope="col">@item.SaldoActual</td>
+                                <td scope="col">@item.MontoPago</td>
+                                <td scope="col">@item.FechaPagar.ToString("yyyy-MM-dd")</td>
+                                @if (@item.FechaCancelada.ToString("yyyy-MM-dd") == "0001-01-01")
                                 {
                                     <td scope="col">-------------</td>
                                 }
                                 else
                                 { 
-                                    <td scope="col">@item.fecha_cancelada.ToString("yyyy-MM-dd")</td>
+                                    <td scope="col">@item.FechaCancelada.ToString("yyyy-MM-dd")</td>
                                 }
-                                <td scope="col">@item.monto_mora</td>
-                                @if (@item.estado == 1 || @item.monto_mora == 0)
+                                <td scope="col">@item.MontoMora</td>
+                                @if (@item.Estado == 1 || @item.MontoMora == 0)
                                 {
                                     <td scope="col">Cancelada</td>
                                 }

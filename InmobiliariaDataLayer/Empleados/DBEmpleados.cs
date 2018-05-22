@@ -17,12 +17,12 @@ namespace InmobiliariaDataLayer.Empleados
         {
             db = new PostConnection();
         }
-//        public int Delete(int id)
 
         public object FindAll()
         {
             var lista = new List<EmpleadosIngresoViewModels>();
-            string query = "SELECT id, nombre, apellido, dpi, telefono, sexo, fecha_nac, direccion FROM empleados";
+
+            string query = "SELECT id, nombre, apellido, dpi, telefono, sexo, fecha_nac, direccion, id_cargo, id_estadoemp FROM empleados";
             using (var connection = PostConnection.Connection())
             {
                 using (var command = db.Command(query))
@@ -35,7 +35,8 @@ namespace InmobiliariaDataLayer.Empleados
                         {
                             while (reader.Read())
                             {
-                                lista.Add(new EmpleadosIngresoViewModels() {
+                                lista.Add(new EmpleadosIngresoViewModels()
+                                {
 
                                     id = Convert.ToInt16(reader["id"]),
                                     nombre_e = reader["nombre"].ToString(),
@@ -45,6 +46,8 @@ namespace InmobiliariaDataLayer.Empleados
                                     sexo_e = Convert.ToInt16(reader["sexo"]),
                                     fecha_nac_e = Convert.ToDateTime(reader["fecha_nac"]),
                                     dire_e = reader["direccion"].ToString(),
+                                    cargo_e = Convert.ToInt16(reader["id_cargo"]),
+                                    estado_e = Convert.ToInt16(reader["id_estadoemp"]),
                                 });
                             }
                         }
@@ -71,7 +74,6 @@ namespace InmobiliariaDataLayer.Empleados
             return estado;
         }
 
-
         public object FindForId(int id)
         {
             var empleado = new EmpleadosIngresoViewModels();
@@ -84,11 +86,11 @@ namespace InmobiliariaDataLayer.Empleados
                     {
                         connection.Open();
                         command.Connection = connection;
+                        command.Parameters.AddWithValue("@idemp", id);
                         using (var reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-
                                 empleado.id = Convert.ToInt16(reader["id"]);
                                 empleado.nombre_e = reader["nombre"].ToString();
                                 empleado.apellido_e = reader["apellido"].ToString();
@@ -99,7 +101,6 @@ namespace InmobiliariaDataLayer.Empleados
                                 empleado.dire_e = reader["direccion"].ToString();
                                 empleado.cargo_e = Convert.ToInt16(reader["id_cargo"]);
                                 empleado.estado_e = Convert.ToInt16(reader["id_estadoemp"]);
-
                             }
                         }
                     }
@@ -143,11 +144,9 @@ namespace InmobiliariaDataLayer.Empleados
             int estado = -1;
 
             string query = "UPDATE empleados SET nombre = @nombreemp, apellido = @apellidoemp, dpi = @dpiemp, telefono = @telemp, sexo = @sexoemp,"+
-            " direccion = @diremp, id_cargo = @cargoemp, id_estadoemp = @estadoemp WHERE id = @idemp";
+            " fecha_nac = @fecha_nacemp, direccion = @diremp, id_cargo = @cargoemp, id_estadoemp = @estadoemp WHERE id = @idemp";
             
-
             var datos = (EmpleadosIngresoViewModels)data;
-
             var command = db.Command(query);
             command.Parameters.AddWithValue("@idemp", datos.id);
             command.Parameters.AddWithValue("@nombreemp", datos.nombre_e);
@@ -155,7 +154,7 @@ namespace InmobiliariaDataLayer.Empleados
             command.Parameters.AddWithValue("@dpiemp", datos.dpi_e);
             command.Parameters.AddWithValue("@telemp", datos.tel_e);
             command.Parameters.AddWithValue("@sexoemp", datos.sexo_e);
-//            command.Parameters.AddWithValue("@fecha_nacemp", datos.fecha_nac_e);
+            command.Parameters.AddWithValue("@fecha_nacemp", datos.fecha_nac_e);
             command.Parameters.AddWithValue("@diremp", datos.dire_e);
             command.Parameters.AddWithValue("@cargoemp", datos.cargo_e);
             command.Parameters.AddWithValue("@estadoemp", datos.estado_e);

@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="Clientes\BdClientes.cs" />
     <Compile Include="Clientes\DBBeneficiario.cs" />
+    <Compile Include="Clientes\DBEstadoCli.cs" />
+    <Compile Include="Clientes\DBPagar.cs" />
     <Compile Include="Clientes\DBReferencia.cs" />
     <Compile Include="Connection\PostConnection.cs" />
     <Compile Include="Cuotas\DBCuota.cs" />
@@ -57,12 +59,23 @@
     <Compile Include="Empleados\DBEmpleados.cs" />
     <Compile Include="Empleados\DBEstadoEmp.cs" />
     <Compile Include="Empleados\DBReferenciaEmp.cs" />
+    <Compile Include="Lote\DBEstadoLote.cs" />
     <Compile Include="Lote\DBLote.cs" />
+    <Compile Include="Lote\DBManzana.cs" />
+    <Compile Include="Lotificadora\DBGastos.cs" />
+    <Compile Include="Lotificadora\DBLotificadora.cs" />
+    <Compile Include="Lotificadora\DBViaticos.cs" />
     <Compile Include="Pagos\DBCalcMora.cs" />
     <Compile Include="Pagos\DBMoras.cs" />
     <Compile Include="Pagos\DBPagos.cs" />
     <Compile Include="Promociones\DBPromocion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Venta\DBDescuento.cs" />
+    <Compile Include="Venta\DBDetalleVenta.cs" />
+    <Compile Include="Venta\DBTipoVenta.cs" />
+    <Compile Include="Venta\DBVenta.cs" />
+    <Compile Include="Venta\DBFinanVenta.cs" />
+    <Compile Include="Venta\DBLastVenta.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InmobiliariaLogicLayer\InmobiliariaLogicLayer.csproj">
@@ -77,6 +90,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

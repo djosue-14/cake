@@ -1,0 +1,36 @@
+﻿@model List<InmobiliariaViewModels.Lotes.ManzanaLoteViewModels>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col s12 m12 l12">
+        <h4 class="text-center blue-text text-darken-1">Tabla Manzana</h4>
+
+        <table class="striped responsive-table">
+            <thead>
+                <tr>
+                    <th scope="col">Manzana</th>
+                    <th scope="col">Acciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td scope="col">@item.manzana</td>
+                        <td>
+                            <a href="@Url.Action("Delete", "ManzanaLote")/@item.id" class="btn-small red"><i class="fas fa-trash"></i>Eliminar</a>
+                            <a href="@Url.Action("Edit", "ManzanaLote")/@item.id" class="btn-small orange"><i class="fas fa-edit"></i>Modificar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+

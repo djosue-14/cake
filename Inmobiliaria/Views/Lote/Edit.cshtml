@@ -1,0 +1,99 @@
+﻿@model InmobiliariaViewModels.Lotes.LoteIngresoViewModels
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="row">
+    <div class="col s12 m12 l12">
+        <h2 class="blue-text text-darken-1">Editar Lote</h2>
+        @using (Html.BeginForm("Edit", "Lote", FormMethod.Post))
+        {
+            <div class="input-field col s12 m4 l5">
+                <label for="numero">Numero</label>
+                <input type="text" name="numero" id="numero" class="validate" value="@Model.numero"/>
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="largo">Largo</label>
+                <input type="text" name="largo" id="largo" class="validate" value="@Model.largo"/>
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="ancho">Ancho</label>
+                <input type="text" name="ancho" class="validate" id="ancho" value="@Model.ancho"/>
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="mts_cuadrados">Metros Cuadrados</label>
+                <input type="text" name="mts_cuadrados" class="validate" id="mts_cuadrados" value="@Model.mts_cuadrados"/>
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <label for="precio_lote">Precio</label>
+                <input type="text" name="precio_lote" class="validate" id="precio_lote" value="@Model.precio_lote"/>
+            </div>
+
+            <div class="input-field col s12 m4 l5">
+                <select name="manzana_id" id="manzana_id">
+                    @foreach (var c in Model.manzanas)
+                    {
+                        if (c.id == Model.manzana_id)
+                        {
+                            <option value="@c.id" selected>@c.manzana</option>
+
+                        }
+                        else
+                        {
+                            <option value="@c.id">@c.manzana</option>
+                        }
+                    }
+                </select>
+                <label for="manzana_id">Manzana</label>
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <select name="lotificadora_id" id="lotificadora_id">
+                    @foreach (var s in Model.lotificadoras)
+                    {
+                        if (s.id == Model.lotificadora_id)
+                        {
+                            <option value="@s.id" selected>@s.nombre</option>
+
+                        }
+                        else
+                        {
+                            <option value="@s.id">@s.nombre</option>
+                        }
+                    }
+                </select>
+                <label for="lotificadora_id">Lotificadora</label>
+            </div>
+            <div class="input-field col s12 m4 l5">
+                <select name="estado_id" id="estado_id">
+                    @foreach (var s in Model.estados)
+                    {
+                        if (s.id == Model.estado_id)
+                        {
+                            <option value="@s.id" selected>@s.estado</option>
+
+                        }
+                        else
+                        {
+                            <option value="@s.id">@s.estado</option>
+                        }
+                    }
+                </select>
+                <label for="estado_id">Estado</label>
+            </div>
+
+            <div class="col s12 m4 l5">
+                <button type="submit" class="btn light-blue">Actualizar</button>
+            </div>
+        }
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/js/materialscript.js")
+}

@@ -1,0 +1,39 @@
+﻿@model InmobiliariaViewModels.Pagos.UltimoPagoViewModels
+
+
+<h6>@Model.Saldo_Anterior</h6>
+<h6>@Model.Saldo_Actual</h6>
+<h6>@Model.Monto</h6>
+<h6>@Model.Fecha_Pagar</h6>
+<h6>@Model.Fecha_Cancelada</h6>
+<h6>@Model.Cuota</h6>
+<hr />
+
+<div class="row">
+    <div class="col s12 m5 l4">
+
+        @using (Html.BeginForm("Create", "Pagos", FormMethod.Post))
+        {
+            <input type="hidden" name="Saldo_Actual" id="Saldo_Actual" value="@Model.Saldo_Actual" />
+            <input type="hidden" name="Fecha_Pagar" id="Fecha_Pagar" value="@Model.Fecha_Pagar" />
+            <input type="hidden" name="Cuota" id="Cuota" value="@Model.Cuota"/>
+            <input type="hidden" name="Venta_id" id="Venta_id" value="@Model.Venta_id" />
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" name="Monto" class="validate" id="Monto" value="@Model.Monto">
+                    <label for="Monto">Monto</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <button type="submit" class="btn light-blue accent-3">Pagar</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/js/materialscript.js")
+}

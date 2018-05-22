@@ -1,4 +1,4 @@
-﻿@model List<InmobiliariaViewModels.PromocionViewModels>
+﻿@model InmobiliariaViewModels.PromoViewModels
 @{
     ViewBag.Title = "Index";
 }
@@ -10,11 +10,10 @@
                 <div class="col s12 m5 l4">
                     <div class="input-field col s12">
                         <select name="Id" id="Id">
-                            <option value="" disabled selected>Elige tu opcion</option>
-                            <option value="1">Refugio</option>
-                            <option value="2">Perlas</option>
-                            <option value="3">America</option>
-                            <option value="4">Condado</option>
+                            @foreach (var item in Model.Lotificadoras)
+                            {
+                                <option value="@item.id">@item.nombre</option>
+                            }
                         </select>
                         <label for="Id">Lotificadora</label>
                     </div>
@@ -37,7 +36,7 @@
         <table class="striped responsive-table">
             <thead>
                 <tr>
-                    <th scope="col">Cantidad</th>
+                    <th scope="col">Monto</th>
                     <th scope="col">Descripcion</th>
                     <th scope="col">Fecha Inicio</th>
                     <th scope="col">Fecha Fin</th>
@@ -45,7 +44,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @foreach (var item in Model.Promociones)
                 {
                     <tr>
                         <td scope="col">@item.Cantidad</td>

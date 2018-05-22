@@ -21,8 +21,8 @@ namespace InmobiliariaDataLayer.Pagos
         public object FindForId(int id)
         {
             var paramsMora = new CalcularMoraViewModels();
-
-            string query = "SELECT saldo, fecha, cuota, mora FROM calc_mora";//falta el WHERE para filtrar una venta
+            string query = "SELECT saldo, fecha, cuota, mora FROM calc_demorados WHERE venta_id = @venta_id"
+                + " ORDER BY fecha DESC LIMIT 1";
             using (var connection = PostConnection.Connection())
             {
                 using (var command = db.Command(query))
@@ -30,6 +30,7 @@ namespace InmobiliariaDataLayer.Pagos
                     try
                     {
                         connection.Open();
+                        command.Parameters.AddWithValue("@venta_id", id);
                         command.Connection = connection;
                         using (var reader = command.ExecuteReader())
                         {
@@ -44,11 +45,44 @@ namespace InmobiliariaDataLayer.Pagos
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.Message);
+                    Console.WriteLine(ex.Message);
                     }
                 }
             }
+            DateTime fechaUltimaMora = FechaUltimaMora(id);
+            paramsMora.Fecha = paramsMora.Fecha < fechaUltimaMora ? fechaUltimaMora : paramsMora.Fecha;
             return paramsMora;
+        }
+
+        private DateTime FechaUltimaMora(int id)
+        {
+            DateTime fechaUltimaMora = new DateTime();
+            string query = "SELECT fecha FROM moras WHERE venta_id = @venta_id" +
+                " ORDER BY fecha DESC LIMIT 1";
+            using (var connection = PostConnection.Connection())
+            {
+                using (var command = db.Command(query))
+                {
+                    try
+                    {
+                        connection.Open();
+                        command.Parameters.AddWithValue("@venta_id", id);
+                        command.Connection = connection;
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                fechaUltimaMora = Convert.ToDateTime(reader["fecha"]);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                    }
+                }
+            }
+            return fechaUltimaMora;
         }
 
         public int Save(object data)
@@ -66,14 +100,5 @@ namespace InmobiliariaDataLayer.Pagos
 
             return estado;
         }
-
-
-        //private int ConvertToDays(string intervalo)
-        //{
-        //    int cantidadDias = 0;
-        //    var subintervalo = intervalo.Substring(0, intervalo.IndexOf("."));
-        //    cantidadDias = Convert.ToInt16(subintervalo);
-        //    return cantidadDias;
-        //}
     }
 }

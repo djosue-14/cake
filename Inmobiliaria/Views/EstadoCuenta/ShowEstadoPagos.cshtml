@@ -1,0 +1,64 @@
+﻿@model List<InmobiliariaViewModels.Pagos.EstadoPagosViewModels>
+@{
+    ViewBag.Title = "Estado de Cuenta";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <div class="page-header">
+            <h4 id="tables" class="text-center">Estado de Pagos</h4>
+        </div>
+
+        <div class="row">
+            <a class="btn blue" href="@Url.Action("ShowEstadoPagosReport", "EstadoCuenta")">Ver Reporte</a>
+            <a class="btn gren" href="@Url.Action("DownloadEstadoPagosReport", "EstadoCuenta")">Descargar Reporte</a>
+        </div>
+
+        <div class="bs-component">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Saldo Anterior</th>
+                            <th scope="col">Saldo Actual</th>
+                            <th scope="col">Monto Cancelado</th>
+                            <th scope="col">Fecha Pago</th>
+                            <th scope="col">Fecha Cancelada</th>
+                            <th scope="col">Monto Mora</th>
+                            <th scope="col">Estado Mora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td scope="col">@item.SaldoAnterior</td>
+                                <td scope="col">@item.SaldoActual</td>
+                                <td scope="col">@item.MontoPago</td>
+                                <td scope="col">@item.FechaPagar.ToString("yyyy-MM-dd")</td>
+                                @if (@item.FechaCancelada.ToString("yyyy-MM-dd") == "0001-01-01")
+                                {
+                                    <td scope="col">-------------</td>
+                                }
+                                else
+                                {
+                                    <td scope="col">@item.FechaCancelada.ToString("yyyy-MM-dd")</td>
+                                }
+                                <td scope="col">@item.MontoMora</td>
+                                @if (@item.Estado == 1 || @item.MontoMora == 0)
+                                {
+                                    <td scope="col">Cancelada</td>
+                                }
+                                else
+                                {
+                                    <td scope="col">Sin Pagar</td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

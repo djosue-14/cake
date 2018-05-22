@@ -11,7 +11,6 @@ namespace Inmobiliaria.Controllers
 {
     public class ReferenciaEmpController : Controller
     {
-        // GET: ReferenciaEmp
         public ActionResult Index()
         {
             DBReferenciaEmp dbReferenciaEmp = new DBReferenciaEmp();
@@ -40,7 +39,6 @@ namespace Inmobiliaria.Controllers
             ReferenciaEmp refemp = new ReferenciaEmp(dbReferenciaEmp);
             datos.id_emp = Convert.ToInt16(TempData["EmpId"]);
             refemp.Save(datos);
-            //return RedirectToAction("Index", "Empleado");
             return RedirectToAction("Index", "Empleado");
         }
 
@@ -67,7 +65,6 @@ namespace Inmobiliaria.Controllers
             DBReferenciaEmp dbReferenciaEmp = new DBReferenciaEmp();
             ReferenciaEmp refemp = new ReferenciaEmp(dbReferenciaEmp);
             refemp.Delete(id);
-            //return RedirectToAction("Index", "Empleado");
             return RedirectToAction("Index", "Empleado");
         }
 

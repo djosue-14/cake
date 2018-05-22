@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSEstadoPagos" targetNamespace="http://tempuri.org/DSEstadoPagos.xsd" xmlns:mstns="http://tempuri.org/DSEstadoPagos.xsd" xmlns="http://tempuri.org/DSEstadoPagos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSEstadoPagos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSEstadoPagos" msprop:Generator_UserDSName="DSEstadoPagos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EstadoPagos" msprop:Generator_TableClassName="EstadoPagosDataTable" msprop:Generator_TableVarName="tableEstadoPagos" msprop:Generator_TablePropName="EstadoPagos" msprop:Generator_RowDeletingName="EstadoPagosRowDeleting" msprop:Generator_RowChangingName="EstadoPagosRowChanging" msprop:Generator_RowEvHandlerName="EstadoPagosRowChangeEventHandler" msprop:Generator_RowDeletedName="EstadoPagosRowDeleted" msprop:Generator_UserTableName="EstadoPagos" msprop:Generator_RowChangedName="EstadoPagosRowChanged" msprop:Generator_RowEvArgName="EstadoPagosRowChangeEvent" msprop:Generator_RowClassName="EstadoPagosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SaldoAnterior" msprop:Generator_ColumnVarNameInTable="columnSaldoAnterior" msprop:Generator_ColumnPropNameInRow="SaldoAnterior" msprop:Generator_ColumnPropNameInTable="SaldoAnteriorColumn" msprop:Generator_UserColumnName="SaldoAnterior" type="xs:string" minOccurs="0" />
+              <xs:element name="SaldoActual" msprop:Generator_ColumnVarNameInTable="columnSaldoActual" msprop:Generator_ColumnPropNameInRow="SaldoActual" msprop:Generator_ColumnPropNameInTable="SaldoActualColumn" msprop:Generator_UserColumnName="SaldoActual" type="xs:string" minOccurs="0" />
+              <xs:element name="MontoPago" msprop:Generator_ColumnVarNameInTable="columnMontoPago" msprop:Generator_ColumnPropNameInRow="MontoPago" msprop:Generator_ColumnPropNameInTable="MontoPagoColumn" msprop:Generator_UserColumnName="MontoPago" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaPagar" msprop:Generator_ColumnVarNameInTable="columnFechaPagar" msprop:Generator_ColumnPropNameInRow="FechaPagar" msprop:Generator_ColumnPropNameInTable="FechaPagarColumn" msprop:Generator_UserColumnName="FechaPagar" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaCancelada" msprop:Generator_ColumnVarNameInTable="columnFechaCancelada" msprop:Generator_ColumnPropNameInRow="FechaCancelada" msprop:Generator_ColumnPropNameInTable="FechaCanceladaColumn" msprop:Generator_UserColumnName="FechaCancelada" type="xs:string" minOccurs="0" />
+              <xs:element name="MontoMora" msprop:Generator_ColumnVarNameInTable="columnMontoMora" msprop:Generator_ColumnPropNameInRow="MontoMora" msprop:Generator_ColumnPropNameInTable="MontoMoraColumn" msprop:Generator_UserColumnName="MontoMora" type="xs:string" minOccurs="0" />
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
